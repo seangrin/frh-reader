@@ -4,3 +4,5 @@ desktop.ini
 .vscode/
 __pycache__/
 *.pyc
+tools/.cache/
+.cache/
