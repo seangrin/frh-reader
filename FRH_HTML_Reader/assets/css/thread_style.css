@@ -315,6 +315,37 @@ p, li { font-size: 1rem; }
   margin-top: -0.35rem;
   margin-bottom: 0.65rem;
 }
+.inline-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+  gap: 0.75rem;
+  margin: 0.8rem 0 1.2rem;
+}
+.inline-thumbnails figure {
+  margin: 0;
+}
+.inline-thumbnails img,
+.inline-thumbnails .missing-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--nav);
+}
+.inline-thumbnails .missing-thumb {
+  display: grid;
+  place-items: center;
+  padding: 0.65rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+.inline-thumbnails figcaption {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  text-align: center;
+}
 .lightbox {
   position: fixed;
   inset: 0;
@@ -619,6 +650,18 @@ p, li { font-size: 1rem; }
   min-width: 15ch !important;
   white-space: normal !important;
   word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+.legacy-page.letter-page .legacy-article.letter-body .letter-signature {
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 1rem 0 0 !important;
+  font-family: "Courier New", "Courier", "Nimbus Mono PS", "Liberation Mono", monospace !important;
+  font-size: 1rem !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
   overflow-wrap: normal !important;
 }
 .legacy-page.letter-page .legacy-article.letter-body a {
