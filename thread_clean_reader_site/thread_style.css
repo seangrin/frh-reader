@@ -998,7 +998,18 @@ hr { border: none; border-top: 1px solid var(--line); margin: 1rem 0; }
     min-height: auto;
   }
   .legacy-page.letter-page .legacy-article.letter-body {
-    padding: 0.65in 0.45in 0.7in;
+    padding: 1.1rem 1rem 1.35rem;
+  }
+  .legacy-page.letter-page .legacy-article.letter-body p,
+  .legacy-page.letter-page .legacy-article.letter-body table,
+  .legacy-page.letter-page .legacy-article.letter-body td {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-indent: 0 !important;
+    max-width: 100% !important;
+  }
+  .legacy-page.letter-page .legacy-article.letter-body span {
+    letter-spacing: 0 !important;
   }
   .artifact-note {
     padding: 0.85rem 0.95rem;
