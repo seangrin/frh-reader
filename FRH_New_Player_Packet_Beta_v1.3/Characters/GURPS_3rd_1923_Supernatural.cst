@@ -1,0 +1,1223 @@
+"Character Sheet file v. 1" gamesystem GURPS description "GURPS character sheet with settings for Cliffhangers."
+sheettype "" help gurps.hlp chargenScript GURPSTemplate.scp chargenTemplate
+GURPS.cst ruleset Cliffhangers version 253 level 3 maxAttempts 50 pixinx
+96 pixiny 96 rounding 0 
+info notesloc 334 232 -1 -1 rtloc 0 0 0 0 0 0 end 
+datafile GURPS.cds GURPSCompendium.cds GURPSCliffhangers.mds end
+
+template GURPS_3rd_1923_Supernatural.cst filter GURPS.flt ptemplate
+GURPS2.prt script GURPS.script menuposition 18 2 0 2 1 2 2 2 3 3 0
+2 5 2 4 3 0 1 0 1 1 1 7 1 6 1 4 3 0 1 2 1 3 3 0 1 5 define array attArr[16]
+-80,-70,-60,-50,-40,-30,-20,-15,-10,0,10,20,30,45,60,80 
+var useMetric "ConfigParam(\"UseMetric\")" 
+func "attChkMsg(attName, att, bonus, minVal, maxVal)" "{\r\n\
+if (att < minVal+bonus)\r\n\
+  return format('%s must be at least %d.', attName, minVal+bonus);\r\n\
+endif\r\n\
+if (maxVal and att > maxVal+bonus)\r\n\
+  return format('%s must be no greater than %d.', attName, maxVal+bonus);\r\n\
+endif\r\n\
+return format('%s must be at least 1.', attName);\r\n\
+}"
+
+func "attChk(att, bonus, minVal, maxVal)" "{\r\n\
+if (att < minVal+bonus)\r\n\
+  return 0;\r\n\
+endif\r\n\
+if (maxVal and att > maxVal+bonus)\r\n\
+  return 0;\r\n\
+endif\r\n\
+return att>0;\r\n\
+}"
+
+func "sbp(bp, imp,extra)" "{\r\n\
+if(bp<>imp and imp)\r\n\
+  return format('%d/%d',bp+extra,imp+extra);\r\n\
+endif\r\n\
+return bp+extra;\r\n\
+}"
+
+func dpddr(x) "{\r\n\
+local pd, dr, extraDR, extraPD;\r\n\
+extraDR = optValue('Extra DR');\r\n\
+extraPD = optValue('Extra PD');\r\n\
+pd = optValue('PD')+extraPD;\r\n\
+dr = optValue('DR')+extraDR;\r\n\
+if (optPresent('DR vs imp'))\r\n\
+  dr = format('%d/%d', dr, optValue('DR vs imp')+extraDR);\r\n\
+endif\r\n\
+if (optPresent('PD vs imp'))\r\n\
+  pd = format('%d/%d', pd, optValue('PD vs imp')+extraPD);\r\n\
+endif\r\n\
+return format('PD %s, DR %s', pd, dr);\r\n\
+}"
+
+func dquan(quan,paren) "quan<2?'':(paren?format(' (×%s)', quan):format(', ×%d',quan))"
+
+var armorPD b_WholePD?b_WholePD:b_BodyPD 
+var armorPDimp b_WholePD?b_WholePDimp:b_BodyPDimp 
+var armorDR b_WholeDR?b_WholeDR:b_BodyDR 
+var armorDRimp b_WholeDR?b_WholeDRimp:b_BodyDRimp 
+var charTotal attributes+t_adv+t_disadv+quirks+t_skills 
+var attdisadv "(~st<8 and !ST0Required?c_st:0) + (~dx<8?c_dx:0)+(~iq<8?c_iq:0)+(~ht<8?c_ht:0)"
+
+var attdisadvcount "(~st<8 and !ST0Required)+(~dx<8)+(~iq<8)+(~ht<8)+ \r\n\
+(~x_ht<baseHits)+(~x_st<baseFatigue)"
+
+var disadvcount "attdisadvcount+\r\n\
+listentries('Disadvantages')+0*disadvantages"
+
+func chkattdisadv(x) "!checkMax or t_disadv+attdisadv>=-maxDisad or attdisadvcount<1 or disadvcount<=1"
+
+func "bv(value, diff)" "{\r\n\
+local v;\r\n\
+v = 0;\r\n\
+if (itemInfo('@v@'))\r\n\
+	if (itemInfo('@c@') > 0)\r\n\
+		v = itemInfo('@baseValue@');\r\n\
+	endif\r\n\
+else\r\n\
+	v = min(20, value);\r\n\
+endif\r\n\
+return max(0, v + diff);\r\n\
+}\r\n\
+"
+
+array skillCost[5] 0,0.5,1,2,4 
+func bodyweightfunc(st) "{\r\n\
+if (st<6)\r\n\
+  return 130;\r\n\
+endif\r\n\
+if (st<8)\r\n\
+  return 135;\r\n\
+endif\r\n\
+if (st<15)\r\n\
+  return 140+(st-8)*5;\r\n\
+endif\r\n\
+return 180+(st-15)*10;\r\n\
+}"
+
+func "diceadds(dice, adds, adds2, maxdice, maxadds)" "{\r\n\
+local d, a, md, ma, rd, ra, xd;\r\n\
+d = dice;\r\n\
+a = adds + adds2;\r\n\
+\r\n\
+if (maxdice > 0 and d > maxdice)\r\n\
+	xd = d - maxdice;\r\n\
+	d = maxdice;\r\n\
+	a = a + 7 * integer(xd/2) + (xd mod 2)*4;\r\n\
+	if (a > maxadds) a = maxadds; endif\r\n\
+endif\r\n\
+\r\n\
+rd = d;\r\n\
+ra = a;\r\n\
+if (a >= 7)\r\n\
+	d = d + 2*integer(a / 7);\r\n\
+	a = a mod 7;\r\n\
+endif\r\n\
+if (a >= 4)\r\n\
+	d = d + 1;\r\n\
+	a = a - 4;\r\n\
+endif\r\n\
+\r\n\
+if (adds2dice)\r\n\
+	ra = a;\r\n\
+	rd = d;\r\n\
+endif\r\n\
+\r\n\
+if (maxdice > 0)\r\n\
+	md = maxdice;\r\n\
+	ma = maxadds;\r\n\
+\r\n\
+	if (ma >= 7)\r\n\
+		md = md + 2*integer(ma / 7);\r\n\
+		ma = ma mod 7;\r\n\
+	endif\r\n\
+	if (ma >= 4)\r\n\
+		md = md + 1;\r\n\
+		ma = ma - 4;\r\n\
+	endif\r\n\
+	if (d*4+a > md*4+ma)\r\n\
+		if (adds2dice)\r\n\
+			rd = md; ra = ma;\r\n\
+		else\r\n\
+			rd = maxdice; ra = maxadds;\r\n\
+		endif\r\n\
+	endif\r\n\
+endif\r\n\
+\r\n\
+if (rd = 0 and ra < -5)\r\n\
+	return 0;\r\n\
+elseif (ra < 0)\r\n\
+	return format(\"%dd%d\", rd, ra);\r\n\
+elseif (ra = 0)\r\n\
+	return format(\"%dd\", rd);\r\n\
+endif\r\n\
+return format(\"%dd+%d\", rd, ra);\r\n\
+}"
+
+func in2ft(in) "{\r\n\
+if (in = integer(in))\r\n\
+	return format(\"%d'%d%s\",integer(in/12),in mod 12, '\"');\r\n\
+endif\r\n\
+return format(\"%d'%1d%s\",integer(in/12),in mod 12, '\"');\r\n\
+}"
+
+func in2cm(in) "format(\"%d cm\",round(in*2.54))" 
+func dispInch(in) "useMetric?in2cm(in):(in>12?in2ft(in):format('%d\"',in))"
+
+func dh(in) useMetric?in2cm(in):in2ft(in)) 
+func dw(lbs) "{\r\n\
+if (usemetric)\r\n\
+	return format('%1d kg',lbs/2.2);\r\n\
+endif\r\n\
+if (lbs = 1)\r\n\
+	return '1 lb';\r\n\
+endif\r\n\
+return format('%d lbs', lbs);\r\n\
+}"
+
+func mx(att) min(att,20) 
+var HitsBonus RevFatHits?STBonus:HTBonus 
+var FatigueBonus RevFatHits?HTBonus:STBonus 
+var SpellFatigueBonus RevFatHits?HTBonus:STSpellFatigue 
+var baseFatigue FatigueBOIQ?~iq:(RevFatHits?~ht:~st) 
+var baseHits Hits1Required?1:(RevFatHits?~st:~ht) 
+var maxDisad disadvlim-campdisadv 
+var p_st 0 
+var jumpST LBST?LBST+~st-10:st_jump+~ST 
+var encumST LBST?LBST+~st-10:ST 
+var skilldefST st_skilldef+~ST 
+var ver 2 
+func slc(level) level 
+func findCombatValue(valueName) "{\r\n\
+local i, n, value, maxValueName, maxValue, showValue, showValueName, option, showOption;\r\n\
+\r\n\
+option = format(\"`%s`\", valueName);\r\n\
+showOption = format(\"`Show %s`\", valueName);\r\n\
+\r\n\
+maxValue = 0;\r\n\
+showValue = maxValue;\r\n\
+maxValueName = \"Default\";\r\n\
+showValueName = maxValueName;\r\n\
+\r\n\
+n = listentries(\"Skills\");\r\n\
+i = 1;\r\n\
+\r\n\
+while (i <= n)\r\n\
+  value = listiteminfo(\"Skills\", i, option);\r\n\
+  if (listiteminfo(\"Skills\", i, showOption) and value > showValue)\r\n\
+    showValue = value;\r\n\
+    showValueName = listiteminfo(\"Skills\", i, \"@name@\");\r\n\
+  elseif (value > maxValue)\r\n\
+    maxValue = value;\r\n\
+    maxValueName = listiteminfo(\"Skills\", i, \"@name@\");\r\n\
+  endif\r\n\
+  i = i + 1;\r\n\
+endwhile\r\n\
+\r\n\
+n = listentries(\"Equipment\");\r\n\
+i = 1;\r\n\
+\r\n\
+while (i <= n)\r\n\
+  value = listiteminfo(\"Equipment\", i, option);\r\n\
+  if (listiteminfo(\"Equipment\", i, showOption) and value > showValue)\r\n\
+    showValue = value;\r\n\
+    showValueName = listiteminfo(\"Equipment\", i, \"@name@\");\r\n\
+  elseif (value > maxValue)\r\n\
+    maxValue = value;\r\n\
+    maxValueName = listiteminfo(\"Equipment\", i, \"@name@\");\r\n\
+  endif\r\n\
+  i = i + 1;\r\n\
+endwhile\r\n\
+\r\n\
+if (showValue)\r\n\
+  n = setVariable(concat(valueName,\r\n\
+    \"Item\"), showValueName);\r\n\
+  return showValue;\r\n\
+endif\r\n\
+\r\n\
+n = setVariable(concat(valueName, \"Item\"), \r\n\
+  maxValueName);\r\n\
+return maxValue;\r\n\
+}"
+
+var parry findCombatValue('Parry')+zparry*b_bhparry*b_1wparry*b_awparry*combatreflexes*0
+
+func wpbonus(nm) "{\r\n\
+local name, n;\r\n\
+if (b_awparry)\r\n\
+  return b_awparry+combatreflexes;\r\n\
+endif\r\n\
+name = nm ? nm : itemInfo(\"@n@\");\r\n\
+n = optValue(\"Skills\", \"Enhanced Parry\", \"Skill\");\r\n\
+if (n = name)\r\n\
+  return 1+combatreflexes;\r\n\
+endif\r\n\
+n = optValue(\"Advantages\", \"Enhanced Parry\", \"Skill\"));\r\n\
+return (n = name)+combatreflexes;\r\n\
+}"
+
+var block findCombatValue('Block')+zblock*0 
+func mageryCost(x) x<8?qindex(x,15,25,35,50,65,85,105):105+(x-7)*25
+
+func skchk(level,cost) "{\r\n\
+local dv, bl, minCost, tcost, f, ml, ok;\r\n\
+if (itemInfo('@bod@'))\r\n\
+  dv = evaluateDefault(0);\r\n\
+  return level=dv or (level>dv and cost>=.5);\r\n\
+endif\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return level>=bl+itemInfo('@bonus@');\r\n\
+endif\r\n\
+tcost = (cost + itemInfo('@a@')) * itemInfo('@m@');\r\n\
+f = tcost - integer(tcost);\r\n\
+ok = tcost > 0  and (f = .5 or f = 0);\r\n\
+minCost = itemInfo('`Minimum Cost`');\r\n\
+ml = optValue(\"Minimum Level\");\r\n\
+if (minCost)\r\n\
+	return ok and tcost>=minCost and level>=ml;\r\n\
+endif\r\n\
+if (ml)\r\n\
+	return ok and level>=ml;\r\n\
+endif\r\n\
+return ok or level = 0;\r\n\
+}"
+
+func spchk(level,cost) "{\r\n\
+local bl, minCost, rl, rc;\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+	return level>=bl+itemInfo('@bonus@');\r\n\
+endif\r\n\
+rl = optValue('Required Level');\r\n\
+if (rl)\r\n\
+	return level=rl+itemInfo('@bonus@');\r\n\
+endif\r\n\
+rc = optValue('Required Cost');\r\n\
+if (rc)\r\n\
+	return cost=rc;\r\n\
+endif\r\n\
+minCost = itemInfo('`Minimum Cost`');\r\n\
+if (minCost)\r\n\
+  return cost>=minCost;\r\n\
+endif\r\n\
+return level = 0 or cost>=1;\r\n\
+}"
+
+func mmchk(lev,cost,hard,minval,maxval) "{\r\n\
+local minCost, levp1;\r\n\
+if (lev<minval or (maxval and lev>maxval))\r\n\
+  return 0;\r\n\
+endif\r\n\
+minCost = optValue('Minimum Cost');\r\n\
+if (cost<minCost)\r\n\
+  if (lev+1 <= maxval) return 0; endif\r\n\
+endif\r\n\
+if (optValue('Style Maneuver'))\r\n\
+  if (hard)\r\n\
+    return cost>=1;\r\n\
+  else\r\n\
+    return cost>=.5;\r\n\
+  endif\r\n\
+endif\r\n\
+return 1;\r\n\
+}"
+
+func langchk(level,bonus,cost) optValue('Native')?level-bonus>=iq-DeafnessLP:skchk(level,cost)
+
+func "mc(level, bonus)" mageryCost(level)-(bonus?mageryCost(bonus):0)
+
+func attCost(att) att>16?(att-17)*25+100:(att<1?-80:attArr[att])
+
+func "attExpCost(att, orgAtt, bonus)" "{\r\n\
+local ab;\r\n\
+if (estChar and orgAtt)\r\n\
+  ab = orgAtt-bonus;\r\n\
+  if (att > ab)\r\n\
+    return attCost(att) - attCost(ab);\r\n\
+  endif\r\n\
+endif\r\n\
+return 0;\r\n\
+}"
+
+func enhStCost(x) "{\r\n\
+if (x<15)\r\n\
+  return attCost(x);\r\n\
+elseif (x>=15 and x<23)\r\n\
+  return 60 + (x-15) * 10;\r\n\
+elseif (x>=23 and x<30)\r\n\
+  return 140 + (x-23) * 5;\r\n\
+endif\r\n\
+return 175 + round((x-30)/2);\r\n\
+}"
+
+func stCost(x) "{\r\n\
+if (enhancedST)\r\n\
+  return enhStCost(x);\r\n\
+endif\r\n\
+return attCost(x);\r\n\
+}"
+
+func "stExpCost(st, orgST, bonus)" "{\r\n\
+local ast;\r\n\
+if (estChar and orgST)\r\n\
+  ast = orgST - bonus;\r\n\
+  if (st > ast)\r\n\
+    return stCost(st) - stCost(ast);\r\n\
+  endif\r\n\
+endif\r\n\
+return 0;\r\n\
+}"
+
+var extraAttCost "stExpCost(~st,orgSt,&st)+\r\n\
+attExpCost(~dx,orgDX,&dx)+\r\n\
+attExpCost(~iq,orgIQ,&iq)+\r\n\
+attExpCost(~ht,orgHT,&ht)"
+
+func physcost(x) x<=4?skillCost[x+1]:(x-4)*8 
+func pcost(skill,att,adj) "{\r\n\
+local bs, bl, c;\r\n\
+c = physcost(skill-att+adj);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0,c - physcost(bl-att+adj));\r\n\
+elseif (itemInfo('@bod@'))\r\n\
+  bs = evaluateDefault(0);\r\n\
+  return max(0, c - physcost(bs-att+adj));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func pe(skill,att) pcost(skill,att,2) 
+func pa(skill,att) pcost(skill,att,3) 
+func ph(skill,att) pcost(skill,att,4) 
+func meah(x) x<=4?skillCost[x+1]:(x-2)*2 
+func mcost(sk,att,adj) "{\r\n\
+local bs, bl, c;\r\n\
+c = meah(sk-att+adj);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0,c - meah(bl-att+adj));\r\n\
+elseif (itemInfo('@bod@'))\r\n\
+  bs = evaluateDefault(0);\r\n\
+  return max(0, c - meah(bs-att+adj));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func me(sk,att) mcost(sk,att,2) 
+func ma(sk,att) mcost(sk,att,3) 
+func mh(sk,att) mcost(sk,att,4) 
+func mentvh(sk,att) sk-att<=-2?skillcost[sk-att+6]:(sk-att+2)*4 
+func mvh(sk,att) "{\r\n\
+local bs, bl, c;\r\n\
+c = mentvh(sk, att);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0, c - mentvh(bl, att));\r\n\
+elseif (itemInfo('@bod@'))\r\n\
+  bs = evaluateDefault(0);\r\n\
+  return max(0, c - mentvh(bs, att));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func mme(sk) me(sk,iq)*IQM 
+func mma(sk) ma(sk,iq)*IQM 
+func mmh(sk) mh(sk,iq)*IQM 
+func mmvh(sk) mvh(sk,iq)*IQM 
+func ss(sk,att) "{\r\n\
+local baseAttr;\r\n\
+baseAttr = optValue('Base Attribute');\r\n\
+if (baseAttr = 0)\r\n\
+  return mentvh(sk,att);\r\n\
+endif\r\n\
+return mentvh(sk,eval(baseAttr));\r\n\
+}"
+
+func genSkCost(level) "{\r\n\
+local att, useEM, diff, attribute, em, cost;\r\n\
+att = optValue('Base Attribute');\r\n\
+em = optValue('Affected by Eidetic Memory') ? IQM : 1;\r\n\
+diff = optValue('Difficulty');\r\n\
+if (att = 'Normal')\r\n\
+  if (strindex(diff, 'm') > 0)\r\n\
+    attribute = IQ;\r\n\
+  else\r\n\
+    attribute = DX;\r\n\
+  endif\r\n\
+elseif (att = 'ht')\r\n\
+  attribute = HT;\r\n\
+elseif (att = 'st')\r\n\
+  attribute = ST;\r\n\
+elseif (att = 'dx')\r\n\
+  attribute = DX;\r\n\
+else\r\n\
+  attribute = IQ;\r\n\
+endif\r\n\
+if (diff = 'ma')\r\n\
+  cost = ma(level, attribute)*em;\r\n\
+elseif (diff = 'pa')\r\n\
+  cost = pa(level, attribute);\r\n\
+elseif (diff = 'me')\r\n\
+  cost = me(level, attribute)*em;\r\n\
+elseif (diff = 'pe')\r\n\
+  cost = pe(level, attribute);\r\n\
+elseif (diff = 'ph')\r\n\
+  cost = ph(level, attribute);\r\n\
+elseif (diff = 'mh')\r\n\
+  cost = mh(level, attribute)*em;\r\n\
+elseif (diff = 'mvh')\r\n\
+  cost = mvh(level, attribute)*em;\r\n\
+else\r\n\
+  cost = ma(level, attribute)*em;\r\n\
+endif\r\n\
+return cost;\r\n\
+}"
+
+func gunsk(lev) pe(lev,dx+(iq>9)+(iq>11)) 
+func asp(sk,iq) "{\r\n\
+local c, bl;\r\n\
+c = meah(sk-(iq+magery+eideticbonus+b_spells)+3);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0,c - meah(bl-(iq+magery+eideticbonus+b_spells)+3));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func hsp(sk,iq) "{\r\n\
+local c, bl;\r\n\
+if (sk = 0) return 0; endif\r\n\
+c = meah(sk-(iq+magery+eideticbonus+b_spells)+4);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0,c - meah(bl-(iq+magery+eideticbonus+b_spells)+4));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func vhsp(sk,iq) "{\r\n\
+local bl, c;\r\n\
+if (sk = 0) return 0; endif\r\n\
+c = mentvh(sk,iq+magery+eideticbonus+b_spells);\r\n\
+bl = optValue('Base Level');\r\n\
+if (bl)\r\n\
+  return max(0,c - mentvh(bl,iq+magery+eideticbonus+b_spells));\r\n\
+endif\r\n\
+return c;\r\n\
+}"
+
+func malang(sk) optValue('Native')?(sk-iq+DeafnessLP)*IQM:mma(sk)
+
+func melang(sk) optValue('Native')?(sk-iq+DeafnessLP)*IQM:mme(sk)
+
+func mhlang(sk) optValue('Native')?(sk-iq+DeafnessLP)*IQM:mmh(sk)
+
+func mvhlang(sk) optValue('Native')?(sk-iq+DeafnessLP)*IQM:mmvh(sk)
+
+func hmafunc(sk,base) "{\r\n\
+local v;\r\n\
+v = sk - base;\r\n\
+if (v<4)\r\n\
+  return qindex(v+1,0,1,2,4);\r\n\
+endif\r\n\
+return (v-4)*2 + 6;\r\n\
+}"
+
+func mmcost(lev,def,hard) "{\r\n\
+local cost;\r\n\
+if (hard)\r\n\
+  cost = hmafunc(lev,def);\r\n\
+else\r\n\
+  cost = meah(lev-def);\r\n\
+endif\r\n\
+return cost;\r\n\
+}\r\n\
+"
+
+func "supcost(level, costPerLevel)" "{\r\n\
+  local cplOption;\r\n\
+  cplOption = itemInfo('`LC`');\r\n\
+  if (cplOption != 0)\r\n\
+    return level * cplOption;\r\n\
+  endif\r\n\
+  return level * costPerLevel;\r\n\
+}"
+
+func tcfunc(bc,a,mo,p) ceil((bc+a)*mo*max(100+p,25)/100) 
+func tcpow(bc,a,aux,mo,p) bc+ceil((aux+a)*mo*max(100+p,25)/100) 
+func "thrustmax(st, adds2, md, ma)" "{\r\n\
+  local dice, adds, temp; \r\n\
+\r\n\
+  if (st <= 0)\r\n\
+    dice = 0;\r\n\
+    adds = -6;\r\n\
+  elseif (st < 5)\r\n\
+    dice = 1;\r\n\
+    adds = st-10; \r\n\
+  elseif (st < 7)\r\n\
+    dice = 1;\r\n\
+    adds = st - 10;\r\n\
+  elseif (st < 13)\r\n\
+    dice = 1;\r\n\
+    adds = integer((st - 7)/2) - 3;\r\n\
+  elseif (st < 51)\r\n\
+    temp = integer((st - 11) / 2);\r\n\
+    dice = integer(temp / 4) + 1;\r\n\
+    adds = temp mod 4 - 1;\r\n\
+  elseif (st = 51)\r\n\
+    dice = 5;\r\n\
+    adds = 2;\r\n\
+  elseif (st < 68)\r\n\
+    temp = integer((st - 52) / 2);\r\n\
+    dice = integer(temp / 4) + 6;\r\n\
+    adds = temp mod 4 - 1;\r\n\
+  else\r\n\
+    dice = 8 + integer((st - 68) / 10);\r\n\
+    temp = (st - 68) mod 10;\r\n\
+    if (temp < 2)\r\n\
+      adds = -1;\r\n\
+    elseif (temp < 5)\r\n\
+      adds = 0;\r\n\
+    elseif (temp < 7)\r\n\
+       adds = 1;\r\n\
+    else\r\n\
+       adds = 2;\r\n\
+    endif\r\n\
+  endif\r\n\
+\r\n\
+  return diceadds(dice, adds, adds2, md, ma);\r\n\
+}"
+
+func "swingmax(st, adds2, md, ma)" "{\r\n\
+  local dice, adds, temp; \r\n\
+\r\n\
+  if (st <= 0)\r\n\
+    dice = 0;\r\n\
+    adds = -6;\r\n\
+  elseif (st < 5)\r\n\
+    dice = 1;\r\n\
+    adds = st-10; \r\n\
+  elseif (st < 10)\r\n\
+    dice = 1;\r\n\
+    adds = st - 10;\r\n\
+  elseif (st < 27)\r\n\
+    dice = integer((st - 9) / 4) + 1;\r\n\
+    adds = (st - 9) mod 4 - 1;\r\n\
+  elseif (st < 41)\r\n\
+    temp = integer((st - 27) / 2) + 2;\r\n\
+    dice = 5 + integer(temp / 4);\r\n\
+    adds = temp mod 4 - 1;\r\n\
+  elseif (st < 47)\r\n\
+    dice = 7;\r\n\
+    adds = integer((st-41) / 3);\r\n\
+  elseif (st < 49)\r\n\
+    dice = 7;\r\n\
+    adds = 2;\r\n\
+  elseif (st < 51)\r\n\
+    dice = 8;\r\n\
+    adds = -1;\r\n\
+  elseif (st < 53)\r\n\
+    dice = 8;\r\n\
+    adds = 0;\r\n\
+  elseif (st < 56)\r\n\
+    dice = 8;\r\n\
+    adds = 1;\r\n\
+  elseif (st < 58)\r\n\
+    dice = 8;\r\n\
+    adds = 2;\r\n\
+  else\r\n\
+    dice = 9 + integer((st - 58) / 10);\r\n\
+    temp = (st - 58) mod 10;\r\n\
+    if (temp < 2)\r\n\
+      adds = -1;\r\n\
+    elseif (temp < 5)\r\n\
+      adds = 0;\r\n\
+    elseif (temp < 7)\r\n\
+       adds = 1;\r\n\
+    else\r\n\
+       adds = 2;\r\n\
+    endif\r\n\
+  endif\r\n\
+\r\n\
+  return diceadds(dice, adds, adds2, md, ma);\r\n\
+}"
+
+func "thrust(st, adds2)" "thrustmax(st, adds2, 0, 0)" 
+func "swing(st, adds2)" "swingmax(st, adds2, 0, 0)" 
+func sw(x) "swing(max(p_st,st), x)" 
+func thr(x) "thrust(max(p_st,st), x)" 
+func "swmax(adds, maxdice, maxadds)" "swingmax(max(p_st,st), adds, maxdice, maxadds)"
+
+func "thrmax(adds, maxdice, maxadds)" "thrustmax(max(p_st,st), adds, maxdice, maxadds)"
+
+var wealthMult qindex(wealthAdd+4,-1,0.2,0.5,1,2,5,20,10^(wealthAdd-2))
+
+var b_speed 0 
+var b_running 0 
+var b_sc 0 
+var ewt possweight+max(0,exbodyweight)+(incdensity>0?max(0,baseWeight+incdensity-ST*15):0)
+
+var rawSpeed (float(dx)+ht)/4+b_speed)*a_move 
+var base_speed lame?maxmove*a_move:rawSpeed 
+var speed base_speed 
+var enc "{\r\n\
+if (ewt<=noenc)\r\n\
+  return 1;\r\n\
+elseif (ewt<=lightenc)\r\n\
+  return 2;\r\n\
+elseif (ewt<=medenc)\r\n\
+  return 3;\r\n\
+elseif (ewt<=hvyenc)\r\n\
+  return 4;\r\n\
+elseif (ewt<=xhvyenc)\r\n\
+  return 5;\r\n\
+endif\r\n\
+return 6;\r\n\
+}"
+
+func encmult(level) "qindex(level,\r\n\
+nomult?nomult:2, \r\n\
+lightmult?lightmult:4, \r\n\
+medmult?medmult:6,\r\n\
+hvymult?hvymult:12, \r\n\
+xhvymult?xhvymult:20)\r\n\
+"
+
+func encfunc(level) "encmult(level)*max(encumST, p_st)" 
+func encmv(level) "qindex(level,\r\n\
+    0,\r\n\
+    lightred?lightred:1,\r\n\
+    medred?medred:2,\r\n\
+    hvyred?hvyred:3,\r\n\
+    xhvyred?xhvyred:4)"
+
+var a_move 1 
+var base_move integer(speed+b_running)-red_move 
+func minmv(level) "{\r\n\
+local mv;\r\n\
+if (level>5) return 0; endif\r\n\
+if (base_move >= 10)\r\n\
+  mv = integer(base_move *\r\n\
+    qindex(level, 1, .8, .6, .4, .2));\r\n\
+  return max(mv, qindex(level, base_move,\r\n\
+    8, 7, 6, 5));\r\n\
+endif\r\n\
+mv = max(1, base_move-encmv(level));\r\n\
+return max(mv, qindex(level, mv, lightmin,\r\n\
+  medmin, hvymin, xhvymin));\r\n\
+}"
+
+func "denc(label, level)" "format(\"%s (%d) %s\", label, minmv(level), level=enc?'*':'')"
+
+var move minmv(enc) 
+var adr 0 
+var apd 0 
+var idr 0 
+var ipd 0 
+var spd 0 
+var IQm 1 
+var aging_rate 1 
+func heightweight(h) "{\r\n\
+if (h<62)\r\n\
+  return 120;\r\n\
+endif\r\n\
+if (h<65)\r\n\
+  return 130;\r\n\
+endif\r\n\
+if (h<67)\r\n\
+  return 135;\r\n\
+endif\r\n\
+if (h<74)\r\n\
+  return 140+(h-67)*5;\r\n\
+endif\r\n\
+return 180+(h-74)*10;\r\n\
+}"
+
+func stweight(st) st<17?qindex(st-4,130,135,135,140,145,150,155,160,165,170,180,190):190+(st-16)*10
+
+var defHeight "racialHeight?racialHeight:max(round((min(64+max(st,5)+b_height-5,max_height+&max_height))*(1+m_height)),min_height)-(sex=2?2:0)-(tl<5 and histAccHeight?3:0)"
+
+var baseWeight racialWeight?racialWeight:heightweight(height)+b_weight-(sex=2?10:0)
+
+var defWeight baseWeight+exbodyweight+incdensity 
+var min_height 0 
+var max_height 84 
+var unspent "max(0, exp-expSpent)" 
+func wealthFunc(dummy) "{\r\n\
+if (wealthMult < 0)\r\n\
+  return 0;\r\n\
+endif\r\n\
+if (wealthMult = 0)\r\n\
+  return baseWealth;\r\n\
+endif\r\n\
+return float(baseWealth)*wealthMult;\r\n\
+}"
+
+func jobmult(income) "{\r\n\
+local ind, mult, wl;\r\n\
+wl = optValue(\"Wealth Level\");\r\n\
+ind = 3 + wealthAdd;\r\n\
+if (wl = \"Poor\")\r\n\
+  mult = 1;\r\n\
+elseif (wl = \"Struggling\")\r\n\
+  mult = qindex(ind, .4, 1);\r\n\
+elseif (wl = \"Average\")\r\n\
+  mult = qindex(ind, .2, .5, 1);\r\n\
+elseif (wl = \"Comfortable\")\r\n\
+  mult = qindex(ind, .1, .25, .5, 1, 2, 4, 10);\r\n\
+elseif (wl = \"Wealthy\")\r\n\
+  mult = qindex(ind, 0, .1, .2, .4, 1, 2, 10);\r\n\
+else\r\n\
+  mult = qindex(ind, .2, .5, 1);\r\n\
+endif\r\n\
+return round(mult * income * \r\n\
+  (100+optValue('Pay Raises'))/100);\r\n\
+}"
+
+func ewd(skill) "{\r\n\
+local weapon, skName;\r\n\
+if (wpnDmgBonus <= 0)\r\n\
+	return 0;\r\n\
+elseif (optValue('No Weapon Master Damage Bonus'))\r\n\
+	return 0;\r\n\
+elseif (wpnDmgBonus = 1)\r\n\
+	weapon = listItemInfo('Advantages', 'Weapon Master', '`~Weapon`');\r\n\
+	skName = itemInfo('@class@');\r\n\
+	if (itemInfo('@n@') = weapon or skName = weapon or varItemInfo(skName, '@n@') = weapon)\r\n\
+		return integer(skill/5);\r\n\
+	endif\r\n\
+	return 0;\r\n\
+endif\r\n\
+return integer(skill/5);\r\n\
+}"
+
+func dispSense(s) s<=0?'--':s 
+func displev(level) "{\r\n\
+local bonus;\r\n\
+bonus = itemInfo('@bonus@');\r\n\
+if (bonus = 0)\r\n\
+  return level;\r\n\
+endif\r\n\
+return concat(level, '*');\r\n\
+}"
+
+func dsk(level) "{\r\n\
+local optList, gPenalty;\r\n\
+if (optValue('Specialty'))\r\n\
+  optList = listOptions(\"optTextValue\", \"Specialty\", \r\n\
+    \";;\");\r\n\
+  gPenalty = (strindex(optList, \";;\") > 0) ? 2 : 1;\r\n\
+  return displev(format(\"%d/%d\", \r\n\
+    level-gPenalty, level+5));\r\n\
+endif\r\n\
+return displev(level);\r\n\
+}"
+
+func doptlist(opt) "optValue(opt) ? format(' (%d)', listOptions('optTextValue', opt, ', ')) : ''"
+
+func tprange(p) "{\r\n\
+  if (p <= 12)\r\n\
+    return qindex(p, -1, 0, 1, 2, 4, 8, 15, 30, 60, 100, 200,\r\n\
+      400);\r\n\
+  endif\r\n\
+  if (p <= 20)\r\n\
+    return qindex(p-12, .5, 1, 2, 4, 8, 15, 30, 60) * 1760;\r\n\
+  endif\r\n\
+  return 125 * 2^(p-21) * 1760;\r\n\
+}"
+
+func dtprange(yds) "{\r\n\
+local meters;\r\n\
+if (yds < 0)\r\n\
+	return 'Touch Only, 10 x Time';\r\n\
+endif\r\n\
+if (yds = 0)\r\n\
+	return 'Touch Only';\r\n\
+endif\r\n\
+if (useMetric)\r\n\
+	if (yds < 1000)\r\n\
+		return format('%d m', yds);\r\n\
+	endif\r\n\
+	return format('%d km', yds/1000);\r\n\
+endif\r\n\
+if (yds < 880)\r\n\
+	return format('%d yd', yds);\r\n\
+endif\r\n\
+if (yds = 880)\r\n\
+	return '1/2 mile';\r\n\
+endif\r\n\
+return format('%d mile', yds/1760);\r\n\
+}"
+
+func brawlDmg(base) base+integer(brawling/10) 
+func karateDmg(base) base+integer(Karate/5) 
+var punch thr(max(KarateDmg(-2),BrawlDmg(-2))+(b_HandsPD>2?2:0)+handDmg)
+
+var kick thr(max(KarateDmg(0),BrawlDmg(0))) 
+var runningSpeed (speed*(1+enh_move/2)-red_move)*2^superRunning+b_running
+
+var flyingSpeed rawSpeed*2*2^superflight*(1+enh_flight/2)-red_flight
+
+var swimmingSpeed amphibious?(speed*(1+enh_swim/2)-red_swim)*2^superSwimming+swimming/8:max(1,max(st-5,dx-4,swimming)/10)
+
+var willpower wp?wp:iq+will 
+end 
+list Skills catname Skills var skills 0 listprompt "%0l!Total%-14rx'skills'%-7r! "
+menuchar S font "MS Sans Serif" 8 charset 0 pitch 34 
+loc -1 -1 271 217 
+checkexp "!checkskills or t_skills<=age*2" checkmsg "Total points in skills and spells must be less than or equal to Age × 2."
+listheader %0l!Skills%-18l!Diff.%-12r!Pts%-7r!Lev altformat Categories
+"%0l!Name: Categories%-12r!Pts%-7r!Lev" "%0l!$!: ^t%-14rc%-7rv" end
+list Advantages catname Advantages open var advantages 60 listprompt
+"%0l!Total%-14rx'advantages'%-7r! " menuchar A font "MS Sans Serif"
+8 charset 0 pitch 34 
+loc -2 245 336 178 
+listheader %0l!Advantages%-12r!Pts%-7r!Lev 
+item "Patron (Followers of the Right Hand)" noviolation dupexpected
+original Patron formula qindex(x,10,10,15,15,25,30) totalcostformula
+"`No Cost`?0:tcfunc(c,a,@mo@,@p@)" checkexp "x>0 and x<=6" checkmsg
+"Value not allowed." format "%0ln (^o'Appears')%-14rc%-7r!" sformat
+%0ln%-15r!Variable lookuparray "$Powerful Character;1;1000× Wealth Group;2;Very Powerful Character;3;Powerful Group;4;Very Powerful Group;5;Government;6"
+varname Patron opt begin mult Appears "?:4;6 or less,×1/2;9 or less,×1;12 or less,×2;15 or less,×3"
+noprint end add Equipment ?:2;None,0;Standard,+5;Expensive,+10 begin
+add "Special Qualities" "?:3;None,0;Significant,+5;Very Unusual,+10"
+qual "Access to Magic in Non-magical World" end add Secret -5 add Unwilling
+?+0;-5 begin add Subtraction -5 qual "Minimal Intervention" keepold
+end end level 4 cost 15 totalcost 60 
+end list Disadvantages catname Disadvantages open var disadvantages
+-85 listprompt "%0l!Total%-16rx'disadvantages'%-7r! " menuchar D font
+"MS Sans Serif" 8 charset 0 pitch 34 
+loc -3 422 337 178 
+checkexp "!checkMax or t_disadv+attdisadv>=-maxDisad or disadvcount<=1"
+checkmsg "Too many Disadvantages taken." listheader %0l!Disadvantages%-12r!Pts%-7r!Lev
+
+item "Enemy (Unknown Enemies of FRH)" noviolation dupexpected cat
+Social original Enemy formula qindex(x,-5,-10,-10,-20,-20,-30,-40)
+totalcostformula "`No Cost`?0:tcfunc(c,a,@mo@,@p@)" checkexp "x>0 and x<=7"
+checkmsg "Value not allowed." format %0ln%-14rc%-7r! sformat %0ln%-15r!Variable
+lookuparray "$Individual;1;Powerful Individual;2;Small Group;3;Medium Group;4;Very Powerful Individual;5;Large Group;6;Formidable Group;7"
+varname Enemy opt add Unknown ?+1;-5 mult "Frequency of Submission"
+"?:2;Quite rarely (6-),×1/2;Fairly often (9-),×1;Quite often (12-),×2;Almost all the time (15-),×3"
+begin add Subtraction -15 qual "Access to Magic in Non-magical World"
+keepold end end level 7 cost -40 totalcost -60 
+
+item Duty noviolation cat Social original Duty formula qindex(x,-2,-5,-10,-15)
+totalcostformula "`No Cost`?0:tcfunc(c,a,@mo@,@p@)" checkexp "x>0 and x<=4"
+checkmsg "Value not allowed." format "%0ln (^v)%-14rc%-7r!" sformat
+%0ln%-15r!Variable lookuparray "$6 or less;1;9 or less;2;12 or less;3;15 or less;4"
+varname Duty opt add Involuntary ?+1;-5 add "Not Dangerous" ?+0;+5
+begin add Subtraction -5 qual "Extremely Hazardous" keepold end end
+level 4 cost -15 totalcost -25 
+end list Quirks catname Quirks var quirks 0 listprompt Total menuchar
+Q font "MS Sans Serif" 8 charset 0 pitch 34 
+loc -1 -1 238 129 
+checkexp "!checkMax or quirks>=-maxQuirks+racialQuirks" checkmsg
+"Too many Quirks taken." listheader %0l!Quirks end list Spells catname
+Spells var spells 0 listprompt "%0l!Total%-14rx'spells'%-7r! " menuchar
+L font "MS Sans Serif" 8 charset 0 pitch 34 
+loc -1 -1 293 168 
+checkexp "!checkskills or t_skills<=age*2" checkmsg "Total points in skills and spells must be less than or equal to Age × 2."
+listheader %0l!Spells%-32l!College%-12r!Pts%-7r!Lev end list Equipment
+catname Equipment var possweight 0 listprompt "%0l!Totals (^x|dm(availMoney+wealthFunc(0))|)%-28rx|dm(posscost)|%-15rx|useMetric?format('%1nkg',possweight/2.2):format('%2n',possweight)|"
+costprompt Weight levelprompt Quantity menuchar E font "MS Sans Serif"
+8 charset 0 pitch 34 
+loc -1 -1 271 216 
+checkexp "!checkEnc or possweight<=xhvyenc" checkmsg "$format('Equipment weight exceeds Extra Heavy encumbrance (%s). Remove equipment or check Exclude on items not carried.',dw(xhvyenc))"
+listheader %0l!Equipment%-15r!Cost%-7r!Wt. changeexp availMoney*wealthFunc(0)
+end list Powers catname Powers var powers 0 listprompt "%0l!Total%-14rx'powers'%-7r! "
+menuchar P font "MS Sans Serif" 8 charset 0 pitch 34 
+loc -1 -1 238 178 
+listheader %0l!Powers%-14r!Pts%-7r!Lev end list "Additional Attributes"
+catname "Additional Attributes" var custAttr 0 listprompt "%0l!Total%-12rx'custAttr'%-7r! "
+menuchar U font "MS Sans Serif" 8 charset 0 pitch 34 
+loc -1 -1 261 112 
+listheader "%0l!Additional Attributes%-12r!Pts%-7r!Lev" end dialog
+Main 313 202 
+loc 0 0 
+open font "MS Sans Serif" 8 charset 0 pitch 34 
+fontlist 1 font "MS Sans Serif" 264 charset 0 pitch 34 fontcolor
+128 end 
+end 
+menuchar M checkexp chkattdisadv(0) checkmsg "Lowered Attribute costs exceed maximum Disadvantages."
+defcheckexp x>0 defcheckmsg "Attributes must be greater than 0." text
+Name: 4 8 33 13 left 
+edittext "" 39 4 129 21 Name 
+formula ST0Required?0:round(stCost(~st)*(nofinemanip?.6:1)) 3 39
+30 13 right c_st 
+text ST 42 39 16 13 center 
+editvar ST0Required?0:10+&st 66 35 31 21 checkexp ST0Required?(x=0):attChk(x,&st,minST,maxST)
+checkmsg "$ST0Required?'ST must be 0':attChkMsg('ST',x,&st,minST,maxST)"
+default ST0Required?0:10+&st st 
+text / 100 39 5 13 center 
+editvar baseFatigue+FatigueBonus+&x_st 109 35 31 21 checkexp x>0
+checkmsg "Fatigue must be greater than 0." default baseFatigue+FatigueBonus+&x_st
+x_st 
+formula attCost(~dx) 3 64 30 13 right c_dx 
+text DX 42 64 16 13 center 
+editvar 10 66 60 31 21 checkexp attChk(x,&dx,minDX,maxDX) checkmsg
+"$attChkMsg('DX',x,&dx,minDX,maxDX)" dx 
+text Thr: 108 64 21 13 left 
+formula thrust(max(st,p_st),0) 132 64 30 13 left t_thrdmg 
+formula attCost(~iq) 3 89 30 13 right c_iq 
+text IQ 42 89 16 13 center 
+editvar 10 66 85 31 21 checkexp attChk(x,&iq,minIQ,maxIQ) checkmsg
+"$attChkMsg('IQ',x,&iq,minIQ,maxIQ)" iq 
+text Sw: 108 89 21 13 left 
+formula swing(max(st,p_st),0) 132 89 30 13 left t_swdmg 
+formula attCost(~ht) 3 114 30 13 right c_ht 
+text HT 42 114 16 13 center 
+editvar 10 66 110 31 21 checkexp attChk(x,&ht,minHT,maxHT) checkmsg
+"$attChkMsg('HT',x,&ht,minHT,maxHT)" ht 
+text / 100 114 5 13 center 
+editvar Hits1Required?1:baseHits+HitsBonus+&x_ht 108 110 31 21 checkexp
+Hits1Required?(x=1):x>0 checkmsg "$Hits1Required?'Must have 1 Hit.':'Hit Points must be greater than 0.'"
+default Hits1Required?1:baseHits+HitsBonus+&x_ht x_ht 
+groupbox Movement 7 144 146 52 
+text "Basic Speed" 16 161 77 13 left 
+formula format('%2n',speed) 114 161 33 13 right d_speed 
+text Move 16 176 77 13 left 
+formula move 114 176 33 13 right d_move 
+text Experience: 179 8 58 14 left 
+begin formula "min(max(charTotal-beginningPoints,0)+extraAttCost+addAttCost, exp)"
+238 8 28 13 right expSpent fontexp max(charTotal-beginningPoints,0)+extraAttCost+addAttCost>exp
+end 
+text / 267 8 10 13 center 
+editvar 0 276 4 29 21 checkexp x>=0 checkmsg "Negative experience not allowed."
+exp 
+groupbox Summary 169 27 137 109 
+text Attributes 179 44 82 13 left 
+formula c_st+c_dx+c_iq+c_ht+custAttr 266 44 33 13 right attributes
+
+text Advantages 179 59 82 13 left 
+formula advantages+powers+(~x_st>baseFatigue+FatigueBonus?(~x_st-(baseFatigue+FatigueBonus))*c_xst:0)+(~x_ht>baseHits+HitsBonus?(~x_ht-(baseHits+HitsBonus))*c_xht:0)
+266 59 33 13 right t_adv 
+text Disadvantages 179 74 82 13 left 
+begin formula disadvantages+0*maxDisad*attdisadv+(~x_ht<baseHits+HitsBonus?(~x_ht-(baseHits+HitsBonus))*c_xht:0)+(~x_st<baseFatigue+FatigueBonus?(~x_st-baseFatigue-FatigueBonus)*c_xst:0)
+266 74 33 13 right t_disadv fontexp "-(t_disadv+attdisadv)>maxDisad and disadvcount>1"
+end 
+text Quirks 179 89 82 13 left 
+begin formula quirks+0*maxQuirks*racialQuirks 266 89 33 13 right
+t_quirks fontexp -quirks>maxQuirks-racialQuirks end 
+text Skills 179 104 82 13 left 
+formula skills+spells 266 104 33 13 right t_skills 
+begin formula charTotal+0*beginningPoints*exp*expSpent 258 119 41
+13 right total fontexp total>beginningPoints+expSpent end 
+groupbox Defenses 169 144 137 52 
+text PD 179 161 77 13 left 
+formula sbp(armorPD,armorPDimp,spd+ipd) 266 161 33 13 right t_pd
+
+text DR 179 176 77 13 left 
+formula sbp(armorDR,armorDRimp,idr) 266 176 33 13 right t_dr 
+formula "format(\"TOTAL (%d%s)\", beginningPoints+expSpent, \r\n\
+beginningPoints+expSpent=total?' =':'')"
+179 119 77 13 left d_total 
+end dialog Information 348 202 
+loc 26 26 
+font "MS Sans Serif" 8 charset 0 
+menuchar I text Player: 8 8 40 13 left 
+edittext "" 58 4 284 21 player 
+text Story: 8 28 35 13 left 
+edittext "" 58 28 284 52 story 
+text "Appear- ance:" 8 85 46 30 left 
+edittext "" 58 85 284 65 appearance 
+text Height: 8 161 37 15 left 
+begin editvar defHeight 43 157 54 21 checkexp x>=0 checkmsg "Height must be zero or greater."
+default defHeight format x=0?'':dh(x) formula useMetric?$1/2.54:$1*12+$2
+height script "chgHeight($*height, $*defHeight);" end 
+text Weight: 104 161 39 13 left 
+begin editvar defWeight 142 157 62 21 checkexp x>=0 checkmsg "Weight must be zero or greater"
+default defWeight format x=0?'':dw(x) formula useMetric?$1*2.2:$1 bodyweight
+script "chgWeight($*bodyweight, $*defWeight);" end 
+text Age: 205 161 26 13 right 
+begin editvar "max(youth_age, round(t_skills/2)+1)" 232 157 38 21
+checkexp "x>0 and (!checkskills or t_skills<=x*2)" checkmsg "Age must be greater than zero and total points in skills and spells must be less than or equal to Age × 2."
+default "max(youth_age, round(t_skills/2)+1)" age script chgAge($*age)
+end 
+combobox 2 283 157 59 71 sex Male;1;Female;2;Sex;0 
+checkbox "Historically Accurate Height" 8 182 156 19 histAccHeight
+0 
+text "Created: %@datecreated%" 207 184 135 13 right 
+end dialog Combat 285 250 
+loc -1 -1 
+font "MS Sans Serif" 8 charset 0 
+menuchar C groupbox "Body Protection" 3 179 279 67 
+groupbox "Passive Defense" 3 26 122 80 
+text Armor 12 43 34 13 left 
+formula sbp(armorPD,armorPDimp,0) 87 43 28 13 right d_apd 
+text Shield 12 58 34 13 left 
+formula spd 94 58 21 13 right d_spd 
+text "Innate PD" 12 73 32 13 left 
+formula ipd 94 73 21 13 right d_ipd 
+text Total 12 88 34 13 left 
+formula sbp(armorPD,armorPDimp,spd+ipd) 87 88 28 13 right pd 
+groupbox "Damage Resistance" 3 110 122 67 
+text Armor 12 126 66 13 left 
+formula sbp(armorDR,armorDRimp,0) 87 125 28 13 right d_adr 
+text Toughness 12 141 66 13 left 
+formula idr 94 141 21 13 right d_idr 
+text Total 12 156 66 13 left 
+formula sbp(armorDR,armorDRimp,idr) 87 157 28 14 right dr 
+groupbox Encumbrance 146 2 136 102 
+formula "denc(\"None\", 1)" 154 23 84 13 left m_noenc 
+formula encfunc(1) 240 23 35 13 right noenc 
+formula "denc(\"Light\", 2)" 154 38 84 13 left m_lightenc 
+formula encfunc(2) 240 38 35 13 right lightenc 
+formula "denc(\"Medium\", 3)" 154 53 84 13 left m_medenc 
+formula encfunc(3) 240 53 35 13 right medenc 
+formula "denc(\"Heavy\", 4)" 154 68 84 13 left m_hvyenc 
+formula encfunc(4) 240 68 35 13 right hvyenc 
+formula "denc(\"X-Heavy\", 5)" 154 83 84 13 left m_xhvyenc 
+formula encfunc(5) 240 83 35 13 right xhvyenc 
+groupbox "Active Defenses" 146 110 136 67 
+text Dodge 155 126 40 13 left 
+text Parry 155 141 40 13 left 
+text Block 155 156 40 13 left 
+text "Enc. Weight:" 3 7 65 15 left 
+formula ewt 75 7 46 13 right t_ewt 
+formula u_dodge+pd-encmv(enc) 255 126 20 13 right dodge 
+formula u_parry+pd 255 141 20 13 right t_parry 
+formula u_block+pd 255 156 20 13 right t_block 
+formula integer(base_speed)+b_dodge+combatreflexes 225 126 20 13
+right u_dodge 
+formula parry?parry:integer(dx/2)+combatreflexes+b_bhparry 225 141
+20 13 right u_parry 
+formula (block=0?integer((dx-4)/2):block)+b_block+combatreflexes
+225 156 20 13 right u_block 
+text / 246 126 9 13 center 
+text / 246 141 9 13 center 
+text / 246 156 9 13 center 
+text PD 17 208 23 13 left 
+text DR 17 226 23 13 left 
+formula sbp(b_HeadPD,b_HeadPDimp,ipd) 38 208 40 13 center HeadPD
+
+formula sbp(b_HeadDR,b_HeadDRimp,idr) 38 226 40 13 center HeadDR
+
+text Head 38 193 40 13 center 
+formula sbp(b_BodyPD,b_BodyPDimp,ipd) 78 208 40 13 center BodyPD
+
+formula sbp(b_BodyDR,b_BodyDRimp,idr) 78 226 40 13 center BodyDR
+
+text Body 78 193 40 13 center 
+formula sbp(b_ArmsPD,b_ArmsPDimp,ipd) 118 208 40 13 center ArmsPD
+
+formula sbp(b_ArmsDR,b_ArmsDRimp,idr) 118 226 40 13 center ArmsDR
+
+text Arms 118 193 40 13 center 
+formula sbp(b_LegsPD,b_LegsPDimp,ipd) 158 208 40 13 center LegsPD
+
+formula sbp(b_LegsDR,b_LegsDRimp,idr) 158 226 40 13 center LegsDR
+
+text Legs 158 193 40 13 center 
+formula sbp(b_HandsPD,b_HandsPDimp,ipd) 198 208 40 13 center HandsPD
+
+formula sbp(b_HandsDR,b_HandsDRimp,idr) 198 226 40 13 center HandsDR
+
+text Hands 198 193 40 13 center 
+formula sbp(b_FeetPD,b_FeetPDimp,ipd) 238 208 40 13 center FeetPD
+
+formula sbp(b_FeetDR,b_FeetDRimp,idr) 238 226 40 13 center FeetDR
+
+text Feet 238 193 40 13 center 
+end dialog Picture 268 287 
+loc -1 -1 
+font "MS Sans Serif" 8 charset 0 
+menuchar T picture Picture 5 3 257 280 0 
+end dialog Configuration 311 322 
+loc 333 3 
+open font "MS Sans Serif" 8 charset 0 
+menuchar N groupbox "Campaign Type" 5 3 145 135 
+combobox 6 12 20 133 171 campType "Stone Age;1;Bronze Age/Athens;2;Iron Age/Rome;3;Fantasy/Medieval;4;Renaissance/Colonial;5;Late 19th century;6;Early 1900s;7;Mid-20th century;8;Modern;9;Cyberpunk;10;Interplanetary;10;Interstellar;11"
+
+text "Base Wealth:" 12 49 69 13 left 
+editvar qindex(campType,40,5000,5000,1000,1000,750,750,5000,15000)
+96 45 49 21 checkexp x>=0 default qindex(campType,40,5000,5000,1000,1000,750,750,5000,15000)
+baseWealth 
+text "Tech Level:" 12 72 61 13 left 
+editvar qindex(campType,0,1,2,3,4,5,6,6,7,8,9) 96 68 30 21 default
+qindex(campType,0,1,2,3,4,5,6,6,7,8,9) TL 
+text "Literacy Default:" 12 95 82 14 left 
+editvar qindex(tl-2+&tl,0,5,10) 96 91 30 21 checkexp "x=0 or x=5 or x=10"
+checkmsg "Only values of 0, 5, and 10 are allowed." default qindex(tl-2+&tl,0,5,10)
+LiteracyDefault 
+text "Magic Rarity:" 12 118 82 14 left 
+editvar qindex(campType,0,0,0,0,1,1,1,1,1,1,1) 96 114 30 21 checkexp
+x>=0 default qindex(campType,0,0,0,0,1,1,1,1,1,1,1) magicRarity 
+groupbox "Character Type" 5 142 146 112 
+combobox 7 12 158 132 143 charType "Below-average;1;Average;2;Above-average;3;Experienced;4;Standard;5;Full-fledged hero;6;Truly outstanding;7;Superhuman;8;Superhero;9"
+
+text "Beginning Points:" 12 187 93 13 left 
+editvar 375 107 183 38 21 default "qindex(charType, 15, 25, 50, 75, 100, 150, 200, 300, 500)"
+beginningPoints 
+text "Max. Disadvantages:" 12 210 100 13 left 
+editvar 160 115 206 30 21 default "qindex(charType, 40, 40, 40, 40, 40, 40, 60, 75, 100)"
+disadvlim 
+text "Max. Quirks:" 12 233 100 13 left 
+editvar 5 115 229 30 21 default 5 forceconst maxQuirks 
+groupbox "Campaign Limits" 161 3 145 114 
+text "Extra Fatigue Cost:" 168 22 100 13 left 
+editvar 3 271 18 30 21 checkexp x>0 checkmsg "Extra Fatigue cost must be greater than 0."
+c_xst 
+text "Extra Hit Point Cost:" 168 45 100 14 left 
+editvar 5 271 41 30 21 checkexp x>0 checkmsg "Cost of extra hit points must be greater than 0."
+c_xht 
+text "Aging Age:" 168 68 56 13 left 
+editvar shortLifespan>0?qindex(shortLifespan,37,27,20,15,11,8,6):50*(1+extLifespan)+&aging_age+NoAging*0
+271 64 30 21 checkexp x>=0 default shortLifespan>0?qindex(shortLifespan,37,27,20,15,11,8,6):50*(1+extLifespan)+&aging_age+NoAging*0
+format NoAging?'--':x aging_age 
+text "Maturation Age:" 168 91 84 15 left 
+editvar (shortLifespan?qindex(shortLifespan+1,18,13,9,6,4,3,2,1):18*(1+extLifespan))/(2^EarlyMaturation)
+271 87 30 21 checkexp x>=0 default (shortLifespan?qindex(shortLifespan+1,18,13,9,6,4,3,2,1):18*(1+extLifespan))/(2^EarlyMaturation)
+youth_age 
+groupbox "Character Sheet Options" 161 122 145 132 
+checkbox "Adds to Dice" 170 136 133 19 adds2dice 0 
+checkbox "Enhanced ST" 170 155 133 19 enhancedST 1 
+checkbox "Check Skills" 170 174 133 19 checkskills 1 
+checkbox "Check Max. Disadv." 170 193 133 19 checkMax 1 
+checkbox "Check Encumbrance" 170 212 133 20 checkEnc 1 
+checkbox "Fatigue/HT, Hits/ST" 170 232 133 19 RevFatHits 1 
+groupbox "Initial Attributes" 7 255 299 36 
+checkbox Established 13 268 85 19 estChar 0 
+text ST 106 270 15 14 right 
+editvar 0 123 266 28 21 orgST 
+text DX 158 270 15 14 right 
+editvar 0 175 266 28 21 orgDX 
+text IQ 205 270 15 14 right 
+editvar 0 222 266 28 21 orgIQ 
+text HT 254 270 15 14 right 
+editvar 0 271 266 28 21 orgHT 
+text "Logo File:" 5 300 50 15 left 
+edittext "" 55 296 186 21 LogoFile 
+button Browse... 246 294 60 25 btnBrowse "fileName = $$Configuration.LogoFile;\r\n\
+getFileName fileName, \"Select Logo File\", \"Graphic File|*.bmp;*.jpg;*.png\";\r\n\
+if (fileName)\r\n\
+  Configuration.LogoFile = fileName;\r\n\
+endif"
+"" "" 
+end dialog Development 263 202 
+loc 208 208 
+font "MS Sans Serif" 8 charset 0 
+menuchar V text Year: 3 9 29 13 left 
+editvar 0 30 5 40 21 year 
+text Week: 74 9 36 13 right 
+editvar 1 112 5 30 21 checkexp "x>0 and x <= (weeksPerYear?weeksPerYear:52)"
+checkmsg "$format('Week must be between 1 and %d.',(weeksPerYear?weeksPerYear:52))"
+week 
+text "Cost of Living:" 143 9 73 13 right 
+text "Time Use Profiles:" 3 36 102 14 left 
+list timeuseprof 3 51 119 41 list "Time Use" catname "Time Use" var
+timeuseprof 0 listprompt Total 
+end 
+text Jobs: 131 36 102 14 left 
+list jobs 131 51 119 41 list Jobs catname Jobs var jobs 0 listprompt
+Total 
+end 
+text "Development History:" 3 99 118 15 left 
+list history 3 113 257 86 list History catname History var history
+0 listprompt Total 
+editdlg 2 end 
+formula costOfLiving 218 9 42 13 left totalCostOfLiving 
+end end 

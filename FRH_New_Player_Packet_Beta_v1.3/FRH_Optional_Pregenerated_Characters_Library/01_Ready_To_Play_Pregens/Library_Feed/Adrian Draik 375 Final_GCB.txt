@@ -1,0 +1,34 @@
+
+Adrian Draik	382 points
+
+Male; Age 36; 6'1", 205 lbs; Male Tiefling, age 36, 6 foot 1, 205 lbs.; outwardly severe and almost human under the glamour amulet, with the infernal details deliberately omitted here so the full Tiefling shell can be added cleanly in GCB.
+ST:	14/12 [45]	IQ:	16 [80]	Speed:	6.50
+DX:	14 [45]	HT:	12/14 [20]	Move:	6
+Dodge: 7		Parry: 10
+
+Advantages
+	Absolute Direction [5]; Alertness +1 [5]; Combat Reflexes [15] (Fright Check: 19); DR 10 (Fire) (Occasional) [10]; Eidetic Memory 2 [60]; Lang: English (Native) [0]; Lang: French (Native Spoken/Native Written) [6]; Lang: Latin (Broken Spoken/Accented Written) [3]; Luck [15]; Magery 3 [35]; Night Vision [10]; Patron (Followers of the Right Hand) (15 or less) [60] (Equipment: Standard, +5; Special Qualities (Access to Magic in Non-magical World): Very Unusual, +10; Secret: -5; Subtraction (Minimal Intervention): -5); Strong Will +1 [4] (Will: 17); Voice [10] (Reaction: +2).
+
+Disadvantages
+	Duty (Followers of the Right Hand) (15 or less) [-25] (Involuntary: -5; Subtraction (Extremely Hazardous): -5); Enemy (Unknown Enemies of FRH) [-60] (Unknown: -5; Subtraction (Access to Magic in Non-magical World): -15); Hideous [-20] (Reaction: -4); Nightmares [-5]; Secret (Tiefling under glamour) [-20]; Secret Identity (Adrian Draik's human face is a glamour) [-10].
+
+Quirks
+	Collects old hotel matchbooks from solved cases; Hates being touched unexpectedly; Keeps spare gloves and collar pins for emergency concealment; Smokes when thinking even though brimstone and smoke cling to him; Talks to his amulet before hard cases. [-5]
+
+Powers
+	Infernal Amulet 18(3) (Illusion) [29] (Breakable: DR<=15/HP<=75, -15%; Can Be Hit: -6 Penalty, -10%; Can Be Stolen By: Stealth or Trickery, -10%; Animate Illusions: +20%; Move Illusions: +20%; Range: -3; Touch Only: -20%).
+
+Skills
+	Acting-18 [1½]; Area Knowledge (New York City)-17 [½]; Detect Lies-16 [1]; Diplomacy-17* [½]; Disguise-18 [1½]; Fast-Talk-19 [2]; First Aid/TL6-17 [½]; Gesture-17 [½]; Guns/TL6 (Pistol)-15 [½]; Hidden Lore (Supernatural Creatures)-16 [½]; Interrogation-16 [½]; Intimidation-19 [2]; Occultism-18 [1½]; Psychology-16 [1]; Research-16 [½]; Sex Appeal-17* [2]; Shadowing-16 [½]; Spell Throwing (Ball)-16 [4]; Staff-14 [4] (Parry: 10); Stealth-14 [2]; Streetwise-17 [1]; Thaumatology-18* [1]; Charisma- [+3] (Reaction: +3).
+
+*Cost modifiers: Voice, Magery.
+
+Spells
+		Blur-19; Complex Illusion-19; Continual Light-19; Create Fire-19; Dark Vision-19; Darkness-19; Detect Magic-19; Explosive Fireball-19; Fireball-19; Heat-19; Ignite Fire-19; Infravision-19; Invisibility-19; Keen Eyes-19; Light-19; Mage Sight-19; Night Vision-19; Perfect Illusion-19; See Invisible-19; Seek Fire-19; Sense Emotion-19; Sense Foes-19; Shape Fire-19; Simple Illusion-19; Sound-19; Truthsayer-19.
+
+Equipment
+	Boots, Leather (PD 2, DR 2; 4 lbs.; $10); Cigarette Lighter ($1); First Aid Kit, Individual (2 lbs.; $6; +1 to First Aid); Flashlight (1 lb.; $2); Hat, Slouch ($1; TL: 6); Lockpicks (good; $200; Skill: 12); Playing Cards ($½); Powerstone (Strength 5; $1,240); Smith & Wesson Military & Police .38 Special (cr 2d-1, Skill: 15; 2 lbs.; $30; Malfunction: crit.; SS: 10; Acc: 2; Half DMG: 120; MAX: 1500; RoF: 3~; Shots: 6; ST: 8; Rcl: -1; TL: 6).
+
+Description
+A hardboiled private investigator who passes for human only while his glamour amulet holds. Under the fedora and trench coat, Adrian is an infernal-blooded Tiefling sorcerer with a talent for smoke, lies, fire, and reading bad rooms before they get worse. He works occult cases for FRH and keeps one hand near the missing amulet because if the glamour fails in front of the wrong witnesses, he stops being a detective and becomes a specimen.
+
