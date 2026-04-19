@@ -490,6 +490,70 @@ p, li { font-size: 1rem; }
 .legacy-article font {
   color: inherit !important;
 }
+.npp-main {
+  max-width: 1040px;
+}
+.npp-article > h1,
+.npp-character-sheet > h1 {
+  margin-bottom: 1rem;
+}
+.npp-article h2,
+.npp-character-sheet h2 {
+  clear: both;
+}
+.npp-article blockquote {
+  margin: 1rem 0;
+  padding: 0.1rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--nav);
+}
+.npp-article code,
+.npp-character-sheet code {
+  white-space: normal;
+}
+.npp-character-sheet .table-scroll,
+.npp-article .table-scroll {
+  overflow-x: auto;
+  margin: 0.9rem 0 1.2rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.npp-character-sheet .table-scroll table,
+.npp-article .table-scroll table {
+  margin: 0;
+  min-width: 420px;
+}
+.npp-scene-nav {
+  margin: 1rem 0 1.35rem;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--nav);
+}
+.npp-scene-nav h2 {
+  margin: 0 0 0.65rem;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+}
+.npp-scene-nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.npp-scene-nav a {
+  display: inline-block;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--accent);
+  text-decoration: none;
+  line-height: 1.25;
+}
+.npp-scene-nav a:hover,
+.npp-scene-nav a:focus {
+  background: var(--accent);
+  color: #fff;
+}
 .amber-hero {
   display: grid;
   grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);

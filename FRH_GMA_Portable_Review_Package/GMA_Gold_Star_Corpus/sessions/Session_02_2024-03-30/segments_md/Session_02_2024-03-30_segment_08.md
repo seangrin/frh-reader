@@ -438,7 +438,7 @@ training_purpose: "Read in full; critique after detailed reading, not summary su
 [S02-08-397] [03:53:26.945] Ben: What do you care about that stupid fucking block?
 [S02-08-398] [03:53:30.206] Ben: He can help us.
 [S02-08-399] [03:53:31.527] Ben: He gives us information.
-[S02-08-400] [03:53:33.008] Ben: He made sure we save Dr. Brunth from the spirits of hell.
+[S02-08-400] [03:53:33.008] Ben: He made sure we save Dr. Blunth from the spirits of hell.
 [S02-08-401] [03:53:39.811] Unidentified_Player: Okay.
 [S02-08-402] [03:53:39.971] Unidentified_Player: I'm going to go back to smoking.
 [S02-08-403] [03:53:41.431] Unidentified_Player: I'm going to talk to Matthew.
@@ -452,9 +452,9 @@ training_purpose: "Read in full; critique after detailed reading, not summary su
 [S02-08-411] [03:54:17.903] Shane: So Matthew, you want to tell me more about the, uh, the person you saved there the other day?
 [S02-08-412] [03:54:23.667] Ben: Uh, other day?
 [S02-08-413] [03:54:25.388] Ben: No, it was like a week ago.
-[S02-08-414] [03:54:27.349] Ben: So basically what happened was like, Dr. Brunth.
+[S02-08-414] [03:54:27.349] Ben: So basically what happened was like, Dr. Blunth.
 [S02-08-415] [03:54:30.271] Ben: Months ago.
-[S02-08-416] [03:54:31.672] Ben: The spirit possessed Dr. Brunth and then like he killed himself.
+[S02-08-416] [03:54:31.672] Ben: The spirit possessed Dr. Blunth and then like he killed himself.
 [S02-08-417] [03:54:37.575] Ben: Spirit.
 [S02-08-418] [03:54:38.196] Shane: Did that spirit have a name?
 [S02-08-419] [03:54:41.047] Ben: No, we didn't call it.

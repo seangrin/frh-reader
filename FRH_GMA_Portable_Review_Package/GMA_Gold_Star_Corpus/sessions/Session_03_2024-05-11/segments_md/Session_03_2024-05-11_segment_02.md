@@ -277,7 +277,7 @@ training_purpose: "Read in full; critique after detailed reading, not summary su
 [S03-02-235] [00:43:35.690] Joel: Might I ask what your concern is?
 [S03-02-236] [00:43:38.811] Unidentified_Player: Um, that we all were under a spell that knocked us all out and maybe we still have residual parts of that spell and turning on this thing could cause any one of us to be compromised?
 [S03-02-237] [00:43:48.634] Unidentified_Player: I don't know.
-[S03-02-238] [00:43:49.355] Unidentified_Player: Why don't we ask Dr. Brunth what happened, huh?
+[S03-02-238] [00:43:49.355] Unidentified_Player: Why don't we ask Dr. Blunth what happened, huh?
 [S03-02-239] [00:43:52.256] Unidentified_Player: Like, that's the only problem I'm having with this.
 [S03-02-240] [00:43:54.996] Unidentified_Player: We've lost people before to these things.
 [S03-02-241] [00:43:58.918] Shane: If that demon wanted us dead, we wouldn't be having this conversation.

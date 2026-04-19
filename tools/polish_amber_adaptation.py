@@ -60,6 +60,105 @@ OCR_FIXES = {
     "litle less": "little less",
     "will mere novices": "will be mere novices",
     "shadow your in": "shadow you're in",
+    "place hands in the Pattern": "place my hands in the Pattern",
+    "it is suffice to say": "it is sufficient to say",
+    "Area- Knowledge": "Area Knowledge",
+    "Pattern Imprint cost": "Pattern Imprint costs",
+    "seek an except": "seek an exception",
+    "our roll": "your roll",
+    "difterence": "difference",
+    "fatigue cost will buy": "fatigue cost buys",
+    "anger Benedict": "angry Benedict",
+    "this is ability": "this is the ability",
+    "effect probability": "affect probability",
+    "the power your drawing": "the power you're drawing",
+    "lalso": "also",
+    "where every you wish": "wherever you wish",
+    "where every you": "wherever you",
+    "yourselfif": "yourself if",
+    "uslng": "using",
+    "ShapeShiing": "Shapeshifting",
+    "Pattemn": "Pattern",
+    "inherit trait": "inherent trait",
+    "the the vulnerablty user": "the vulnerable user",
+    "minutel": "minute!",
+    '&quot;raise&quot; Logrus': '&quot;raised&quot; Logrus',
+    "tellif": "tell if",
+    "Lorus": "Logrus",
+    "Skills clills at at 15+ 15+-": "Skills at 15+ -",
+    "cound": "bound",
+    "Somtimes": "Sometimes",
+    "killit": "kill it",
+    "skilto": "skill to",
+    "willinstantly": "will instantly",
+    "fullinvested": "fully invested",
+    "record on": "recorded on",
+    "inluences": "influences",
+    "Ilf": "If",
+    "gate iS open": "gate is open",
+    "Itis": "It is",
+    "your being strangled": "you're being strangled",
+    "you've turn pitch black": "you've turned pitch black",
+    "your are": "you are",
+    "what ever": "whatever",
+    "knock unconscious": "knocked unconscious",
+    "stmaller": "smaller",
+    "ckinny": "skinny",
+    "vorsion": "version",
+    "porson": "person",
+    "woek": "week",
+    "lorm": "form",
+    "youll": "you'll",
+    "lobe": "lose",
+    "necossary": "necessary",
+    "rearrangs": "rearrange",
+    "interal": "internal",
+    "abiities": "abilities",
+    "detal": "detail",
+    "ot heavity": "or heavily",
+    "tolls": "rolls",
+    "Intemnal": "Internal",
+    "re-leamned": "re-learned",
+    "Image a character": "Imagine a character",
+    "Firebal(Earth)": "Fireball(Earth)",
+    "FireballAvalon)": "Fireball(Avalon)",
+    "FIreballGcoogle-Plex)": "Fireball(Google-Plex)",
+    "(M1)-10": "(M/H)-10",
+    "skillit": "skill it",
+    "anting to be rid": "Wanting to be rid",
+    "heart of victim": "heart of the victim",
+    " ictims": " Victims",
+    "an fantastic": "a fantastic",
+    "time need": "time needed",
+    "Secondly, the can be": "Secondly, they can be",
+    "changes the tide": "change the tide",
+    "chance seems to have role": "chance seems to have a role",
+    "useless of ilumination": "useless for illumination",
+    "Psche": "Psyche",
+    "to our Will": "to your Will",
+    "artifact of creature": "artifact or creature",
+    "It the creation is actual lost": "If the creation is actually lost",
+    "steps need": "steps needed",
+    "ormal creature": "normal creature",
+    "willpossess": "will possess",
+    "GURP advantages": "GURPS advantages",
+    "posses": "possess",
+    "a explanation": "an explanation",
+    "- - the the item item": "- the item",
+    "persor": "person",
+    "change change": "can change",
+    "polnracte character": "the character",
+    "didentical identical": "identical",
+    "o contains ntains": "contains",
+    "arifact": "artifact",
+    " cain be ": " can be ",
+    "Iynchpins": "lynchpins",
+    "coula": "could",
+    "sound in every": "found in every",
+    "Find what you want": "Finding what you want",
+    "interrupt your desires": "interpret your desires",
+    "The mus have": "The must have",
+    "with in easy": "within easy",
     "skillevel": "skill level",
     "prereg": "prereq",
     "Prereg": "Prereq",
@@ -103,7 +202,58 @@ def fix_ocr_artifacts(text: str) -> str:
     for bad, good in OCR_FIXES.items():
         text = text.replace(bad, good)
     text = re.sub(r"become resistance\s+1to\s+change", "become resistant to change", text)
+    text = re.sub(r"\b(\w+)\s+\1\b", r"\1", text, flags=re.I)
+    text = re.sub(r"\bHeraldry\(([^)]+)\)", r"Heraldry (\1)", text)
+    text = re.sub(r"\bRiding\(([^)]+)\)", r"Riding (\1)", text)
+    text = re.sub(r"\bHistory\(([^)]+)\)", r"History (\1)", text)
+    text = re.sub(r"\bDriving\s+\(([^)]+)\)", r"Driving (\1)", text)
+    text = text.replace("vVictims", "Victims")
+    text = text.replace("possesssed", "possessed")
+    text = text.replace("possessses", "possesses")
+    text = text.replace("possesss", "possess")
+    text = text.replace("FireBall(Oz)", "Fireball(Oz)")
+    text = text.replace("shapeshifhting", "shapeshifting")
+    text = text.replace("tu rned", "turned")
     return text
+
+
+def fix_structural_html(body: str) -> str:
+    body = re.sub(
+        r"<p>\s*<h3 id=\"logrus\">The Logrus \(150 points\)</h3>\s*",
+        '<h3 id="logrus">The Logrus (150 points)</h3>\n<p>',
+        body,
+        count=1,
+        flags=re.I,
+    )
+    body = re.sub(
+        r"(contact something else\.)\s*Shapeshifting\s*\(80 points\)\s*You have",
+        r'\1</p>\n<h3 id="shapeshifting">Shapeshifting (80 points)</h3>\n<p>You have',
+        body,
+        count=1,
+        flags=re.I,
+    )
+    body = re.sub(
+        r"fade unless continually feed by the summoner\.\s*<h3 id=\"trump\">Trump Artistry \(120 points\)</h3>\s*Trumps are",
+        'fade unless continually fed by the summoner.</p>\n<h3 id="trump">Trump Artistry (120 points)</h3>\n<p>Trumps are',
+        body,
+        count=1,
+        flags=re.I,
+    )
+    body = re.sub(
+        r"went its own\s+way\.\s*<h3 id=\"magic\">Magic</h3>\s*GURPS magic",
+        'went its own way.</p>\n<h3 id="magic">Magic</h3>\n<p>GURPS magic',
+        body,
+        count=1,
+        flags=re.I,
+    )
+    body = re.sub(
+        r"<p>\s*Item\s*<h3 id=\"shapeshifting\">Shapeshifting</h3>\s*",
+        '<h3 id="item-shapeshifting">Item Shapeshifting</h3>\n<p>',
+        body,
+        count=1,
+        flags=re.I,
+    )
+    return body
 
 
 def strip_export_noise(body: str) -> str:
@@ -224,6 +374,7 @@ def clean_body() -> str:
     body = re.sub(r"\s+</p>", "</p>", body)
     body = add_flow_section_structure(body)
     body = fix_ocr_artifacts(body)
+    body = fix_structural_html(body)
     body = body.replace("<table>", '<div class="table-scroll"><table>')
     body = body.replace("</table>", "</table></div>")
     return body
