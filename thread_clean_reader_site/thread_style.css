@@ -614,6 +614,12 @@ p, li { font-size: 1rem; }
 }
 .legacy-page.letter-page .legacy-article.letter-body .signature {
   margin-top: 0 !important;
+  display: block;
+  width: max-content !important;
+  min-width: 15ch !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
 .legacy-page.letter-page .legacy-article.letter-body a {
   color: inherit;
