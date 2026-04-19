@@ -1,0 +1,71 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+01	S07-01-222	00:16:07,479	00:16:24,982	demonlings	minor	Session recap and setup	text_inferred	0.000	Given your paranoia and your cowardice and your general way of being, a thing you may be on the fence about is when you do a summoning of demonlings, they hang 
+01	S07-01-223	00:16:25,602	00:16:31,163	demonlings	minor	Session recap and setup	propagated	0.000	So they could be in your room while you were at a party, making sure nobody messed with your stuff.
+01	S07-01-225	00:16:33,530	00:16:45,915	demonlings	minor		text_inferred	0.000	But you have a holy relic and maybe having a bunch of demon and having five demonlings around them is that going to draw any attention?
+01	S07-01-226	00:16:46,235	00:16:48,276	demonlings	minor		text_inferred	0.000	Will the demonlings be interested?
+01	S07-01-227	00:16:48,396	00:16:50,277	demonlings	minor		propagated	0.000	Will they not be interested?
+01	S07-01-228	00:16:50,297	00:16:57,441	demonlings	minor		text_inferred	0.000	Will they interfere with the demonlings?
+01	S07-01-277	00:19:49,404	00:19:52,284	demonlings	minor	Session recap and setup	text_inferred	0.000	So four demonlings can hang out.
+01	S07-01-278	00:19:54,064	00:20:02,806	demonlings	minor		propagated	0.000	They are limited to roughly 30 miles of your person and will hang around for 24 hours and do pretty much your will.
+01	S07-01-279	00:20:03,626	00:20:14,388	demonlings	minor		text_inferred	0.000	As with all demonic things, they will attempt to take their orders literally and pervert them, but demonlings are not very smart, you know.
+01	S07-01-280	00:20:15,108	00:20:18,550	demonlings	minor		propagated	0.000	It's like trying to outsmart a four year old or something, right?
+01	S07-01-281	00:20:19,210	00:20:24,532	demonlings	minor		propagated	0.000	You can go, Ooh, whatever you do, don't eat this delicious thing, or you know, whatever.
+01	S07-01-282	00:20:24,913	00:20:25,993	demonlings	minor		propagated	0.000	And they do it anyway.
+01	S07-01-283	00:20:26,033	00:20:31,455	demonlings	minor		propagated	0.000	So and, as with all things in hell, it's about power.
+01	S07-01-284	00:20:32,056	00:20:38,919	demonlings	minor		propagated	0.000	And the fact that you summon them, and, you know, you could slap them around some it'd be like, Okay, yeah, we know our place.
+01	S07-01-285	00:20:40,800	00:20:43,801	demonlings	minor		propagated	0.000	The most we'll do is drink all the beer in the mini bars, right?
+01	S07-01-289	00:20:49,108	00:20:52,909	demonlings	minor	Session recap and setup	text_inferred	0.000	So for demonlings, are you going to give any specific instructions?
+01	S07-01-290	00:20:52,969	00:20:57,690	demonlings	minor		propagated	0.000	Are they to kill anything that enters the apart at the hotel room?
+01	S07-01-291	00:20:58,350	00:20:59,771	demonlings	minor		propagated	0.000	Are they to remain invisible?
+01	S07-01-292	00:21:00,031	00:21:03,252	demonlings	minor		propagated	0.000	Are they only to prevent people from going into your luggage?
+01	S07-01-293	00:21:03,932	00:21:05,092	demonlings	minor	Session recap and setup	propagated	0.000	What's the general vibe?
+02	S07-02-295	00:46:37,805	00:46:41,788	demonlings	minor		text_inferred	0.000	So, demonlings are not very powerful celestial beings.
+02	S07-02-296	00:46:41,808	00:46:50,354	demonlings	minor		propagated	0.000	They're still celestial, but they're little essences of evil, wanting to become full-fledged demons, hoping to manifest into a word.
+02	S07-02-297	00:46:50,815	00:46:59,381	demonlings	minor	Session recap and setup	propagated	0.000	But in the meantime, they can't come to Earth unless they're given a body, and your sacrifice of mana gives them a 24-hour body.
+02	S07-02-298	00:46:59,441	00:47:00,962	demonlings	minor	Session recap and setup	propagated	0.000	So, it's a physical body.
+02	S07-02-299	00:47:01,763	00:47:06,807	demonlings	minor	Session recap and setup	text_inferred	0.000	Now, some demonlings randomly have spell capabilities.
+02	S07-02-300	00:47:07,568	00:47:14,052	demonlings	minor	Session recap and setup	propagated	0.000	could a spell affect an in an insubstantial form is the second question.
+02	S07-02-301	00:47:14,692	00:47:25,979	demonlings	minor		propagated	0.000	Yeah, that was your best inch your best knowledge from your interactions with your demon overlord is any kind of spell that would interact with the mind doesn't
+02	S07-02-302	00:47:26,179	00:47:35,045	demonlings	minor		propagated	0.000	So you know, even if a demon has been it possesses a human body, if you have a spell or a song that can attack its mind,
+02	S07-02-303	00:47:42,883	00:47:47,947	demonlings	minor	Session recap and setup	propagated	0.000	So you would assume that if his body is insubstantial, but he can perceive his mind is still present.
+02	S07-02-304	00:47:48,547	00:47:57,774	demonlings	minor	Session recap and setup	propagated	0.000	So if the demons had any of their spells that could affect the mind, like illusion, or stun or something like that, it will probably affect him.
+02	S07-02-305	00:47:58,094	00:47:59,335	demonlings	minor		propagated	0.000	That's your best guess.
+02	S07-02-306	00:47:59,936	00:48:00,896	demonlings	minor		propagated	0.000	You don't know for sure.
+03	S07-03-106	01:07:56,603	01:08:13,197	White_Masked_Host	major		text_inferred	0.000	Ladies and gentlemen, the prophet said Anita is here, and she is going to come forward and tell us a little bit about herself and show us a little bit about the
+03	S07-03-107	01:08:13,817	01:08:42,442	White_Masked_Host	major		text_inferred	0.000	you know as as in the what was her name anita fed anita anita the prophetess anita from australia and that she is um she will be you know much like the the uh t
+03	S07-03-108	01:08:43,193	01:08:46,615	White_Masked_Host	major		text_inferred	0.000	give me a give a warm round of applause for for prophetess Anita.
+03	S07-03-109	01:08:47,315	01:08:55,780	White_Masked_Host	major		propagated	0.000	And so he turns and the doors to the ballroom open and this tall blonde woman in a large white
+03	S07-03-110	01:08:57,470	01:08:58,490	White_Masked_Host	major		propagated	0.000	I don't know how to describe it.
+03	S07-03-111	01:08:58,711	01:09:03,713	White_Masked_Host	major		propagated	0.000	It's a cape, but it goes all the way to her arms.
+03	S07-03-112	01:09:04,713	01:09:08,175	White_Masked_Host	major		propagated	0.000	Her arms are like, she comes walking in dramatically like a fashion model.
+03	S07-03-113	01:09:08,795	01:09:15,678	White_Masked_Host	major		propagated	0.000	Her hands are out like this, and she has these long, elegant hands, and right at her wrist begins this long, white cloak she's wearing.
+03	S07-03-114	01:09:16,218	01:09:25,962	White_Masked_Host	major		propagated	0.000	But the thing is, is it just drops down curving until it gets almost to her ankles, and it comes across her ankles, and it comes up to this, and then it goes al
+03	S07-03-115	01:09:26,102	01:09:28,244	White_Masked_Host	major		propagated	0.000	around her, her throat and then over.
+03	S07-03-117	01:09:50,665	01:09:54,250	White_Masked_Host	major		propagated	0.000	And she walks up and stands on the small stage.
+03	S07-03-118	01:09:54,310	01:09:59,157	White_Masked_Host	major		propagated	0.000	Everybody's doing so and sitting down onto the couches and what have you.
+03	S07-03-119	01:10:00,139	01:10:02,062	White_Masked_Host	major	Session recap and setup	propagated	0.000	So do you take a seat as well?
+03	S07-03-120	01:10:03,898	01:10:05,959	White_Masked_Host	major	Session recap and setup	propagated	0.000	Yeah, I'll take a seat and enjoy the show.
+03	S07-03-122	01:10:06,739	01:10:08,880	White_Masked_Host	major		propagated	0.000	Is there anything in particular you want to do?
+03	S07-03-123	01:10:08,960	01:10:11,101	White_Masked_Host	major		propagated	0.000	Do you want to sit near some people?
+03	S07-03-124	01:10:11,181	01:10:16,864	White_Masked_Host	major		propagated	0.000	You want to try to get a sense of where you might overhear some, some people react to what she's going to say?
+03	S07-03-125	01:10:17,264	01:10:19,505	White_Masked_Host	major		propagated	0.000	Do you want to be over on a couch by yourself?
+03	S07-03-126	01:10:19,565	01:10:25,507	White_Masked_Host	major		propagated	0.000	So if she does have a vision involving you, and she's looking in a direction, it's clear she's looking at you.
+03	S07-03-127	01:10:26,127	01:10:27,068	White_Masked_Host	major		propagated	0.000	What do you think?
+03	S07-03-289	01:22:19,288	01:22:21,969	Anita	major		text_inferred	0.000	You have a guardian angel following you.
+03	S07-03-290	01:22:22,389	01:22:23,469	Anita	major		propagated	0.000	You are so lucky.
+03	S07-03-291	01:22:23,589	01:22:35,933	Anita	major	Session recap and setup	propagated	0.000	I see a being of a muscular, physical human body with the hands and feet of a lion and the face of a bull and the wings of an eagle.
+03	S07-03-292	01:22:36,333	01:22:38,193	Anita	major		propagated	0.000	And he's close behind you.
+03	S07-03-294	01:22:39,994	01:22:41,554	Anita	major		propagated	0.000	He's following you.
+03	S07-03-295	01:22:42,034	01:22:44,155	Anita	major		propagated	0.000	He knows the gold in your possession.
+03	S07-03-296	01:22:44,995	01:22:46,136	Anita	major		text_inferred	0.000	You are so blessed.
+03	S07-03-297	01:22:46,216	01:22:47,697	Anita	major		text_inferred	0.000	The angels are with you.
+03	S07-03-298	01:22:48,557	01:22:50,338	Anita	major		propagated	0.000	Somebody has your trail.
+03	S07-03-299	01:22:50,779	01:22:51,919	Anita	major		propagated	0.000	Heaven is with you.
+03	S07-03-300	01:22:51,939	01:22:54,521	Anita	major		text_inferred	0.000	Oh, praise be unto God.
+03	S07-03-301	01:22:54,541	01:22:56,982	Anita	major		text_inferred	0.000	Let the angels know where you are.
+03	S07-03-302	01:22:57,002	01:23:00,865	Anita	major		propagated	0.000	He's coming from the Basilia.
+03	S07-03-303	01:23:00,885	01:23:03,626	Anita	major		propagated	0.000	He has manifested his glory.
+03	S07-03-333	01:24:37,320	01:24:48,809	White_Masked_Host	major	Session recap and setup	text_inferred	0.000	As you guys are doing that the man with the slick back, golden hair and the white dominant mask stands up on stage and grabs Anita's hand and goes, a hand for A
+03	S07-03-334	01:24:49,210	01:24:51,351	White_Masked_Host	major		text_inferred	0.000	Isn't it wonderful that our friend has been so blessed?
+03	S07-03-335	01:24:51,371	01:24:52,993	White_Masked_Host	major		propagated	0.000	Look, he's still glowing gold.
+06	S07-06-001	02:30:06,263	02:30:32,444	Basilica_Priest	minor		text_inferred	0.000	actually during the mass when you put it down the priest has his arms raised and is lifting the chalice in prayer so the congregation doesn't see it the priest 

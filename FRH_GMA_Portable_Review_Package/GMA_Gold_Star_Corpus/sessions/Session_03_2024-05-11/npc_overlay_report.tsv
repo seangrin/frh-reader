@@ -1,0 +1,13 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+03	S03-03-140	01:07:46,141	01:07:48,022	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	exact	1.000	Oh, I hear you've tuned in.
+03	S03-03-141	01:07:48,162	01:07:49,943	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	exact	1.000	I'm so glad to speak with you.
+03	S03-03-142	01:07:57,108	01:07:58,208	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	propagated	0.000	What part are you shooting?
+03	S03-03-156	01:08:35,750	01:08:36,851	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	exact	1.000	I can't hear you.
+03	S03-03-157	01:08:36,891	01:08:38,332	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	fuzzy	0.945	You must speak up to the wand.
+03	S03-03-158	01:08:38,492	01:08:39,293	Mr_Smoke	major		propagated	0.000	I grabbed the wand.
+03	S03-03-165	01:08:57,402	01:09:05,328	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	fuzzy	0.945	I'm so glad that my compartmental telephony device is working.
+03	S03-03-166	01:09:06,180	01:09:18,643	Mr_Smoke	major	The radio is switched on and Mr. Smoke answers	fuzzy	0.986	through a series of compartments by radio towers along this railroad path, we can communicate as if using a telephone on only radio waves.
+04	S03-04-430	01:56:14,110	01:56:17,233	Mr_Smoke	major	Matthew asks about Tokyo and Mr. Smoke admits his blind spot	exact	1.000	I want you to go to Atlantic City and find out what's going to burn down the casino.
+04	S03-04-431	01:56:18,106	01:56:21,427	Mr_Smoke	major	Matthew asks about Tokyo and Mr. Smoke admits his blind spot	exact	1.000	But in the meantime, if you feel you need to take care of a senator first, I can help with that.
+04	S03-04-432	01:56:21,707	01:56:26,369	Mr_Smoke	major	Matthew asks about Tokyo and Mr. Smoke admits his blind spot	fuzzy	0.978	If you feel like you need to pay your debt back to me and get some flowers from the dream.
+04	S03-04-433	01:56:26,409	01:56:26,989	Mr_Smoke	major	Matthew asks about Tokyo and Mr. Smoke admits his blind spot	propagated	0.000	I turn it off.

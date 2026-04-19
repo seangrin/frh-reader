@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRH GMA Gold-Star Corpus - FRH GMA Review Corpus</title>
+  <link rel="stylesheet" href="../../../assets/css/thread_style.css">
+</head>
+<body class="gma-page">
+  <main class="gma-main">
+    <p class="part">GMA Transcript Corpus</p>
+    <div class="nav gma-nav">
+      <p><a href="../../../index.html">Reader Home</a> | <a href="../transcript_index.html">GMA Transcript Index</a> | <a href="../index.html">GMA Package Home</a></p>
+    </div>
+    <h1 id="frh-gma-gold-star-corpus">FRH GMA Gold-Star Corpus</h1>
+<p>Version: <code>v1.3 Beta</code></p>
+<p>This corpus is a reusable training and DR layer built on top of the WhisperX + SpeechBrain outputs.</p>
+<h2 id="current-notes">Current Notes</h2>
+<ul>
+<li>Session 02 clips the known OOC <code>Bartholomar</code> false-positive spill at <code>S02-06-329</code>.</li>
+<li>Session 05-07 preserve restored <code>Sean_GM</code> attribution in breakout-session outputs.</li>
+<li>Session 06 and Session 07 now include explicit NPC registry and overlay coverage for the highest-value breakout-session NPCs.</li>
+</ul>
+<h2 id="structure">Structure</h2>
+<ul>
+<li><code>sessions/&lt;session&gt;/session_wide.md</code></li>
+<li><code>sessions/&lt;session&gt;/segment_manifest.tsv</code></li>
+<li><code>sessions/&lt;session&gt;/npc_overlay_report.tsv</code></li>
+<li><code>sessions/&lt;session&gt;/segments_md/*.md</code></li>
+<li><code>sessions/&lt;session&gt;/reviews_md/*_review.md</code></li>
+</ul>
+<h2 id="design-rules">Design Rules</h2>
+<ul>
+<li>Base speaker identity stays stable.</li>
+<li>Major NPC performance overlays are additive, not replacements for <code>Sean_GM</code>.</li>
+<li>Segment files are the apprenticeship reading unit.</li>
+<li>Review files are the critique / coaching unit.</li>
+<li>Session-wide files preserve legacy context plus structured NPC registry metadata.</li>
+</ul>
+
+    <div class="page-footer gma-footer">
+      <div class="nav gma-nav">
+        <p><a href="../../../index.html">Reader Home</a> | <a href="../transcript_index.html">GMA Transcript Index</a> | <a href="../index.html">GMA Package Home</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

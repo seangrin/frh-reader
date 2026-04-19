@@ -1,0 +1,20 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+02	S02-02-305	00:48:11,599	00:48:16,242	Mr_Smoke	major		text_inferred	0.000	All right, we're gonna lower her down into the pit for the master to get to later.
+02	S02-02-306	00:48:16,542	00:48:19,944	Mr_Smoke	major		propagated	0.000	Let's go back and get the other one.
+04	S02-04-046	01:32:04,629	01:32:08,231	Mr_Smoke	major	Preston checks the wrapped victim and breaks the captive	exact	1.000	We work for a spider creature that lives in the chimney down at the factory.
+04	S02-04-047	01:32:08,351	01:32:10,771	Mr_Smoke	major	Preston checks the wrapped victim and breaks the captive	propagated	0.000	We bring him people from the train.
+04	S02-04-048	01:32:10,791	01:32:13,992	Mr_Smoke	major	Preston checks the wrapped victim and breaks the captive	propagated	0.000	Uh, we're supposed to bring the lady and this person.
+04	S02-04-049	01:32:14,412	01:32:21,595	Mr_Smoke	major		propagated	0.000	Um, uh, uh, uh, the, the, the spider has lots of money.
+04	S02-04-050	01:32:21,795	01:32:22,855	Mr_Smoke	major		propagated	0.000	I know where the gold is.
+04	S02-04-052	01:32:28,497	01:32:30,939	Mr_Smoke	major	Preston checks the wrapped victim and breaks the captive	propagated	0.000	Um, who's controlling the spider?
+04	S02-04-053	01:32:32,960	01:32:33,501	Mr_Smoke	major		propagated	0.000	I don't know.
+04	S02-04-054	01:32:33,581	01:32:35,322	Mr_Smoke	major		propagated	0.000	I mean, he runs everything.
+05	S02-05-430	02:23:07,530	02:23:13,795	Bartholomar	major		text_inferred	0.000	He's given his soul to Bartholomar and he's now working for the spider being.
+05	S02-05-431	02:23:16,817	02:23:17,898	Bartholomar	major		propagated	0.000	And that's the end of your vision.
+06	S02-06-290	02:48:07,885	02:48:24,732	Mr_Smoke	major		text_inferred	0.000	And he was coming to earth To visit a chimneyrue to try to take down Some kind of enemy that of his superiors in Colorado something we can confirm.
+06	S02-06-298	02:48:41,756	02:48:42,856	Mr_Smoke	major		text_inferred	0.000	Is not the chimneyrue.
+06	S02-06-299	02:48:42,896	02:48:44,977	Mr_Smoke	major		text_inferred	0.000	He came from hell to visit the chimneyrue.
+06	S02-06-303	02:48:52,679	02:48:55,039	Mr_Smoke	major		text_inferred	0.000	He came to offer health services to the chimneyrue.
+06	S02-06-309	02:49:13,430	02:49:17,734	Mr_Smoke	major		text_inferred	0.000	You don't know that chimneyrues do anything with souls.
+06	S02-06-314	02:49:26,842	02:49:29,905	Mr_Smoke	major		text_inferred	0.000	So you're saying you're talking out loud about chimneyrues and demons.
+06	S02-06-328	02:50:04,771	02:50:12,883	Bartholomar	major		text_inferred	0.000	So you essentially get the idea that this guy, Bartholomew, Bartholomar was summoned from something.

@@ -1,0 +1,57 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+03	S04-03-137	01:08:49,210	01:08:56,894	Kobayashi	major	Kobayashi becomes Mr. Smoke's contact	exact	1.000	He has asked that I provide a series of services for you all.
+03	S04-03-138	01:08:56,914	01:09:00,956	Kobayashi	major		propagated	0.000	I will be your contact for Mr.
+03	S04-03-140	01:09:02,956	01:09:05,458	Kobayashi	major	Kobayashi becomes Mr. Smoke's contact	exact	1.000	He doesn't directly deal with people very often.
+03	S04-03-141	01:09:07,098	01:09:14,942	Kobayashi	major		propagated	0.000	You should feel blessed that you've got an opportunity to even interact with him at all, even wirelessly.
+03	S04-03-142	01:09:15,836	01:09:18,657	Kobayashi	major		propagated	0.000	too often in using the wireless telephone.
+03	S04-03-144	01:09:35,004	01:09:39,466	Kobayashi	major		propagated	0.000	One, let me see, let me get my papers here.
+03	S04-03-146	01:09:46,487	01:09:49,830	Kobayashi	major		propagated	0.000	Audifon, I believe you must be Audifon.
+03	S04-03-147	01:09:50,510	01:09:54,533	Kobayashi	major	Kobayashi becomes Mr. Smoke's contact	propagated	0.000	He opens up his case and he pulls out a folder and he hands it to you.
+03	S04-03-148	01:09:55,394	01:09:59,257	Kobayashi	major		propagated	0.000	He goes, that information is for you.
+03	S04-03-149	01:09:59,277	01:10:07,283	Kobayashi	major		propagated	0.000	Stuff that was provided by Mr. Edgar.
+03	S04-03-151	01:10:12,829	01:10:18,954	Kobayashi	major		propagated	0.000	Smoke's acquaintances provided the rest to put that together for you.
+03	S04-03-152	01:10:18,974	01:10:26,039	Kobayashi	major	Kobayashi becomes Mr. Smoke's contact	exact	1.000	So it's essentially from Edgar with my employer's assistance.
+03	S04-03-153	01:10:27,260	01:10:29,221	Kobayashi	major		propagated	0.000	It's just a manila folder.
+03	S04-03-154	01:10:29,281	01:10:30,462	Kobayashi	major		propagated	0.000	It's not sealed or anything.
+03	S04-03-155	01:10:30,482	01:10:33,444	Kobayashi	major		propagated	0.000	You can just open it if you'd like.
+03	S04-03-174	01:12:59,230	01:13:15,041	Kobayashi	major	The St. Louis nail and Preston's contract	fuzzy	0.988	The vision was about an item stored in the church, and I believe, Preston, you can confirm that this is something true, that you do need to find something in th
+03	S04-03-177	01:13:19,818	01:13:23,400	Kobayashi	major		propagated	0.000	So Edgar has provided this information to my employer.
+03	S04-03-178	01:13:23,740	01:13:37,085	Kobayashi	major		propagated	0.000	He has reached out to his contacts and we have learned that the item in question is none other than one of the nails from the true cross from the crucifixion.
+03	S04-03-179	01:13:37,845	01:13:43,968	Kobayashi	major	The St. Louis nail and Preston's contract	exact	1.000	It was brought back from the eighth crusade by St. Louis and stored in Notre Dame.
+03	S04-03-180	01:13:45,108	01:13:48,550	Kobayashi	major		propagated	0.000	It's still supposed to be there, but at some point it was brought
+03	S04-03-181	01:13:49,332	01:13:58,903	Kobayashi	major		propagated	0.000	to America and is being stored in a way that the church itself doesn't even know that they have a member.
+03	S04-03-182	01:14:01,405	01:14:08,833	Kobayashi	major	The St. Louis nail and Preston's contract	fuzzy	0.921	One of the three nails that held Jesus to the true cross is in the basement of the Basilio.
+03	S04-03-183	01:14:12,494	01:14:19,020	Kobayashi	major		propagated	0.000	Well, I don't know enough, but one of, um, Mr.
+03	S04-03-184	01:14:19,080	01:14:37,197	Kobayashi	major		propagated	0.000	Smoke was able to reach out via his contacts and he found that the caretaker of, um, the, uh, Proster point Gallows house would be more than willing
+03	S04-03-185	01:14:38,152	01:14:50,558	Kobayashi	major		propagated	0.000	to violate his oath and let you come in and take Preston's contract from a demonic tether in exchange for the true nail.
+03	S04-03-186	01:14:52,859	01:15:04,905	Kobayashi	major		propagated	0.000	So if you were able to retrieve the nail, one of the nails of the crucifixion from an angelic tether, one of the most important churches in all of North America
+03	S04-03-187	01:15:05,705	01:15:22,841	Kobayashi	major		propagated	0.000	Guarded by an angelic being With the very light of heaven protecting it from demonic influence if you can get that nail and get it to Boston You may be able to 
+03	S04-03-202	01:15:53,345	01:15:55,867	Kobayashi	major	The St. Louis nail and Preston's contract	exact	1.000	I guess you can ask him if you bring it to him.
+03	S04-03-249	01:17:57,354	01:17:58,374	Kobayashi	major	The senator thread turns dangerous	exact	1.000	That wasn't a slip-up.
+03	S04-03-254	01:18:12,015	01:18:13,856	Kobayashi	major	The senator thread turns dangerous	exact	1.000	Oh, believe me.
+03	S04-03-255	01:18:14,617	01:18:17,859	Kobayashi	major		propagated	0.000	What would happen to me if I don't do what Mr.
+03	S04-03-259	01:18:23,423	01:18:26,986	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Oh, he chose me in particular for my etiquette.
+03	S04-03-260	01:18:27,006	01:18:28,607	Kobayashi	major		propagated	0.000	I provide the services he requires.
+03	S04-03-261	01:18:30,452	01:18:31,453	Kobayashi	major		propagated	0.000	As will you.
+03	S04-03-285	01:19:50,881	01:19:54,542	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Mr. Fontaine, I have the items you requested.
+03	S04-03-286	01:19:57,703	01:20:07,566	Kobayashi	major		propagated	0.000	My employer was more than amendable and let me reach in here to his attache case.
+03	S04-03-287	01:20:08,007	01:20:10,967	Kobayashi	major		propagated	0.000	He brings out a small box.
+03	S04-03-288	01:20:12,768	01:20:15,629	Kobayashi	major		propagated	0.000	It's wrapped in gift wrapping in a bow.
+03	S04-03-289	01:20:16,353	01:20:21,055	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	propagated	0.000	And he pulls out a manila folder and he goes, these are for you.
+03	S04-03-292	01:20:26,017	01:20:35,000	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	fuzzy	0.940	He goes, the ring we got off of an Egyptian gentleman, I believe it was called the ring of set poop, is now in your possession.
+03	S04-03-293	01:20:35,020	01:20:37,601	Kobayashi	major		propagated	0.000	It is unique and cannot be repaired.
+03	S04-03-294	01:20:37,721	01:20:38,962	Kobayashi	major		propagated	0.000	So please take care of it.
+03	S04-03-295	01:20:40,170	01:20:49,683	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	And I think you will find that the rest of the paperwork is within the scope of your discussions with my employer.
+03	S04-03-301	01:21:15,384	01:21:20,708	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	fuzzy	0.971	My employer just wanted to make sure that you knew that I could let other people know about some of the stuff that he's done for you.
+03	S04-03-302	01:21:25,235	01:21:26,836	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	My employer likes to reinforce it.
+03	S04-03-304	01:21:31,978	01:21:35,840	Kobayashi	major		propagated	0.000	Those are all of the items that I was meant to deliver.
+03	S04-03-305	01:21:36,840	01:21:39,781	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	fuzzy	0.958	Um, I am here to answer some questions.
+03	S04-03-306	01:21:40,442	01:21:43,323	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	I will be in St. Louis for the next two weeks.
+03	S04-03-308	01:21:48,495	01:21:54,096	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	There will be people near you who will be able to reach me if you are in need of my services in the future.
+03	S04-03-309	01:21:54,856	01:21:56,797	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Are there any questions I can answer for you, Nat?
+03	S04-03-357	01:26:36,247	01:26:43,271	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Now, one thing my employer did suggest is it may be possible that your objectives could be done in parallel.
+03	S04-03-358	01:26:44,272	01:26:48,014	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Maybe a small contingent could take on the Basilia.
+03	S04-03-359	01:26:48,695	01:26:51,016	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	fuzzy	0.938	Maybe somebody could go take care of the Senegal.
+03	S04-03-360	01:26:51,897	01:26:53,478	Kobayashi	major	Auggie's delivery, heavenly tether briefing, and split-mission talk	exact	1.000	Maybe somebody could go get some roses.
+04	S04-04-283	01:44:16,272	01:44:22,156	Kobayashi	major	Back into play after the break	exact	1.000	Again, there will be someone near you who will be able to get in contact with me if you would need my services in the future.
+04	S04-04-284	01:44:26,319	01:44:29,562	Kobayashi	major		propagated	0.000	He gets up and, uh, grabs his app cache case and departs.

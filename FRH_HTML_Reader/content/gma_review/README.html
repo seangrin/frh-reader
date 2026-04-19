@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRH GMA Portable Review Package - FRH GMA Review Corpus</title>
+  <link rel="stylesheet" href="../../assets/css/thread_style.css">
+</head>
+<body class="gma-page">
+  <main class="gma-main">
+    <p class="part">GMA Transcript Corpus</p>
+    <div class="nav gma-nav">
+      <p><a href="../../index.html">Reader Home</a> | <a href="transcript_index.html">GMA Transcript Index</a> | <a href="index.html">GMA Package Home</a></p>
+    </div>
+    <h1 id="frh-gma-portable-review-package">FRH GMA Portable Review Package</h1>
+<p>Version: <code>v1.3 Beta</code></p>
+<p>This package is meant to be portable. You can:</p>
+<ul>
+<li>drop it into an LLM workspace</li>
+<li>zip it and email it to a reviewer</li>
+<li>hand it to another agent as a self-contained corpus</li>
+</ul>
+<h2 id="what-is-included">What Is Included</h2>
+<ul>
+<li><code>README.md</code></li>
+<li><code>GMA_ONBOARDING.md</code> — primary onboarding document for apprentice GMA reads; start here for new LLM instantiation</li>
+<li><code>RELEASE_NOTES.md</code></li>
+<li><code>READING_PROTOCOL.md</code></li>
+<li><code>REVIEW_PROTOCOL.md</code></li>
+<li><code>NPC_OVERLAY_GUIDE.md</code></li>
+<li><code>SESSION_PRIORITY.md</code></li>
+<li><code>GMA_Gold_Star_Corpus/</code></li>
+</ul>
+<h2 id="how-to-use-it">How To Use It</h2>
+<p><strong>New GMA instantiation:</strong> Point the agent to <code>GMA_ONBOARDING.md</code> first. It is LLM-agnostic and self-contained — no prior context needed.</p>
+<p><strong>Reviewer or returning agent:</strong> Point the agent to this <code>README.md</code> first.</p>
+<p>The agent should then:</p>
+<ol type="1">
+<li>read <code>SESSION_PRIORITY.md</code></li>
+<li>read <code>READING_PROTOCOL.md</code></li>
+<li>read <code>NPC_OVERLAY_GUIDE.md</code></li>
+<li>open a session folder inside <code>GMA_Gold_Star_Corpus/sessions/</code></li>
+<li>read <code>session_wide.md</code></li>
+<li>read <code>segment_manifest.tsv</code></li>
+<li>read one segment Markdown file in full</li>
+<li>use the matching review file for critique and refinement</li>
+</ol>
+<h2 id="core-rule">Core Rule</h2>
+<p>Do not summarize instead of reading the source segment.</p>
+<p>The 30-minute segment files are the real training unit.</p>
+<h2 id="suggested-starting-sessions">Suggested Starting Sessions</h2>
+<ul>
+<li>Session 3: Mr. Smoke</li>
+<li>Session 4: Kobayashi</li>
+<li>Session 5: Doctor Hope / Doctor Mike</li>
+<li>Session 1: Reagan and novice-player sidewaysness</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><p>Package version: <code>v1.3 Beta</code></p></li>
+<li><p>This build refreshes the portable package from the latest corpus and is intended to supersede earlier stale copies.</p></li>
+<li><p>Key fixes in this beta:</p>
+<ul>
+<li>Session 02: clipped the known OOC <code>Bartholomar</code> false-positive spill at <code>S02-06-329</code></li>
+<li>Session 05-07: retained restored <code>Sean_GM</code> attribution in breakout sessions</li>
+<li>Session 06: added <code>Kobayashi</code>, <code>Hotel_Concierge</code>, and <code>Basilica_Priest</code> to registry; <code>Basilica_Priest</code> has no overlay lines (priest does not speak)</li>
+<li>Session 07: added <code>Anita</code>, <code>White_Masked_Host</code>, <code>demonlings</code>, and <code>Basilica_Priest</code> registry/overlay coverage</li>
+</ul></li>
+<li><p>If a reviewer sees Session 07 with an empty <code>npc_overlay_report.tsv</code>, they are looking at an older package copy.</p></li>
+<li><p><code>Sean_GM</code> is the stable speaker identity.</p></li>
+<li><p><code>Sean_GM [NPC: X]</code> means Sean is speaking as a major NPC overlay.</p></li>
+<li><p><code>npc_overlay_report.tsv</code> provides an audit trail for those overlays.</p></li>
+<li><p><code>segment_manifest.tsv</code> is the navigation layer for each session.</p></li>
+</ul>
+<h2 id="packaging-intent">Packaging Intent</h2>
+<p>This bundle is designed so a reviewer does not need the original F: drive layout to use the transcript corpus productively. Some provenance fields inside the corpus may still mention original source locations; that is intentional and does not prevent portable use.</p>
+
+    <div class="page-footer gma-footer">
+      <div class="nav gma-nav">
+        <p><a href="../../index.html">Reader Home</a> | <a href="transcript_index.html">GMA Transcript Index</a> | <a href="index.html">GMA Package Home</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

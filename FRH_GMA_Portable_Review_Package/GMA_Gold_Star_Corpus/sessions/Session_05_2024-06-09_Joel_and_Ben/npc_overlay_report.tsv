@@ -1,0 +1,119 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+03	S05-03-197	01:13:06,304	01:13:11,528	Doctor_Hope	major	Dr. Hope's laboratory	exact	1.000	And you must be Vicar General Fontaine.
+03	S05-03-198	01:13:13,511	01:13:14,553	Doctor_Hope	major	Dr. Hope's laboratory	propagated	0.000	Yes, indeed, that's correct.
+03	S05-03-200	01:13:15,955	01:13:17,819	Doctor_Hope	major		propagated	0.000	We've been looking forward to you.
+03	S05-03-201	01:13:20,564	01:13:22,788	Doctor_Hope	major		propagated	0.000	The other Vicar General, Mr.
+03	S05-03-202	01:13:22,868	01:13:25,773	Doctor_Hope	major		propagated	0.000	Smoke, had let us know that you were going to be coming to look
+03	S05-03-203	01:13:28,648	01:13:29,789	Doctor_Hope	major		propagated	0.000	a task for us.
+03	S05-03-204	01:13:30,289	01:13:42,935	Doctor_Hope	major		propagated	0.000	We're really looking forward to showing you what we've been working on, what our research actually can accomplish, that it's not just theoretical, we can do stu
+03	S05-03-205	01:13:43,696	01:13:47,657	Doctor_Hope	major		propagated	0.000	And we're really, really excited to demonstrate that.
+03	S05-03-206	01:13:48,298	01:13:49,979	Doctor_Hope	major		propagated	0.000	So I'm Dr. Hope, and this is
+03	S05-03-207	01:13:58,415	01:13:59,980	Doctor_Hope	major		propagated	0.000	very nice tweed suits.
+03	S05-03-208	01:14:05,935	01:14:07,515	Doctor_Hope	major		propagated	0.000	playing on the bed.
+03	S05-03-210	01:14:16,498	01:14:30,562	Doctor_Hope	major		propagated	0.000	Not a gown like we think of today, like the blue Novak, but like pajamas, like a top and a bottom of just kind of simple white cotton, you know, easy to clean, 
+03	S05-03-215	01:14:56,494	01:15:00,655	Doctor_Hope	major		propagated	0.000	And when he looks over at you, he has kind of a simple expression.
+03	S05-03-220	01:15:11,783	01:15:20,128	Doctor_Hope	major	Dr. Hope's laboratory	exact	1.000	And this is our resource assistant and friend, Bob.
+03	S05-03-221	01:15:21,969	01:15:27,832	Doctor_Hope	major		propagated	0.000	And so let me show you the pictures of everyone, what everyone looks like.
+03	S05-03-250	01:17:38,986	01:17:54,975	Doctor_Hope	major	Dream objects into the physical world	fuzzy	0.955	Can we prove that dream is real by taking objects found in dream and through a combination of technologies and stuff, manifest that into the physical realm?
+03	S05-03-321	01:26:14,561	01:26:21,284	Doctor_Hope	major	Dream objects into the physical world	fuzzy	0.929	So, you may be asking, what does this all have to do with the geography of dreams and Dr. Mike's research?
+03	S05-03-322	01:26:21,304	01:26:22,784	Doctor_Hope	major		propagated	0.000	Well, Dr. Mike, you take it from here.
+03	S05-03-323	01:26:23,204	01:26:24,385	Doctor_Hope	major		propagated	0.000	So, Dr. Mike steps up.
+03	S05-03-325	01:26:26,423	01:26:31,624	Doctor_Hope	major		propagated	0.000	I don't know about astral planes, but anyway, getting to the real science stuff about sleep.
+03	S05-03-326	01:26:32,665	01:26:47,709	Doctor_Hope	major		propagated	0.000	What I have come up with is using animal magnetism and hypnosis and this machine here, I have found individuals who I've been able to get into a dream state.
+03	S05-03-327	01:26:48,709	01:26:54,831	Doctor_Hope	major		propagated	0.000	Working with other scientists and psychics and telepaths,
+03	S05-03-328	01:26:55,785	01:27:04,936	Doctor_Hope	major		propagated	0.000	We have been able to, mainly telepaths, have been able to get into the mind of these dreamers.
+03	S05-03-329	01:27:05,116	01:27:15,148	Doctor_Mike	major	Dream objects into the physical world	fuzzy	0.979	I can get into a consistent dream state and they can explore dream within that person's dreamscape.
+03	S05-03-330	01:27:16,632	01:27:21,477	Doctor_Mike	major	Dream objects into the physical world	exact	1.000	From our research, we have determined a couple of things.
+03	S05-03-331	01:27:22,217	01:27:41,996	Doctor_Mike	major		propagated	0.000	Each person, when they go to sleep, enters into a dreamscape that is confined to their experience, their consciousness, if you will, a bubble that they will ver
+03	S05-03-332	01:27:43,007	01:27:49,949	Doctor_Mike	major		propagated	0.000	And all of dream, if you imagine, is a sea of bubbles of dreamscapes.
+03	S05-03-333	01:27:50,669	01:28:04,152	Doctor_Mike	major		propagated	0.000	Every human in a little bubble, all right next to each other, just squished membranes, just a soap bubble distance from each other, but it could be infinity bec
+03	S05-03-334	01:28:04,952	01:28:07,152	Doctor_Mike	major		propagated	0.000	And that's been humans reality.
+03	S05-03-335	01:28:07,632	01:28:14,814	Doctor_Mike	major	Dream objects into the physical world	exact	1.000	There have been some exceptional individuals who can punch through and enter into other people's dreams.
+03	S05-03-336	01:28:15,874	01:28:31,117	Doctor_Mike	major		propagated	0.000	And some of our more powerful telepaths have been able to enter into the mind of a dreamer, enter into their dreamscape and leave their dreamscape to go into dr
+03	S05-03-337	01:28:31,877	01:28:33,657	Doctor_Mike	major		propagated	0.000	And that's where things get interesting.
+03	S05-03-338	01:28:34,498	01:28:38,802	Doctor_Mike	major		propagated	0.000	Incidentally, there's an area called the marches.
+03	S05-03-339	01:28:39,502	01:28:49,030	Doctor_Mike	major		propagated	0.000	We found something called the near marches, and there's weird things there, like talking fish who wear suits.
+03	S05-03-340	01:28:50,090	01:29:00,122	Doctor_Mike	major		propagated	0.000	We're not sure all that happens in the near marches, but we've been able to push into those from an individual's dreamscape.
+03	S05-03-341	01:29:00,542	01:29:08,612	Doctor_Mike	major		propagated	0.000	However, like I said, only the most powerful telepaths have been able to get into the mind of a dreamer and then out of their dreamscape.
+03	S05-03-342	01:29:09,903	01:29:22,377	Doctor_Mike	major		propagated	0.000	And even then, the amount of effort and the way time differs between dream and reality and dreamers' ability to only stay in a dream state consistently for like
+03	S05-03-343	01:29:23,128	01:29:24,129	Doctor_Mike	major		propagated	0.000	But that's where Mr.
+03	S05-03-344	01:29:24,209	01:29:25,910	Doctor_Mike	major		propagated	0.000	Smoke brought us together.
+03	S05-03-345	01:29:26,530	01:29:38,337	Doctor_Mike	major		propagated	0.000	With Dr. Hope's astral work, we have come up with a technique in which I can get a dreamer into a consistent dream state for 12, 24, maybe 72, maybe longer.
+03	S05-03-346	01:29:40,596	01:29:54,723	Doctor_Mike	major	Dream objects into the physical world	exact	1.000	And while that person is in that dream state, using a similar technology, Dr. Hope can project people astrally into this person's dreamscape.
+03	S05-03-347	01:29:54,763	01:30:05,628	Doctor_Mike	major		propagated	0.000	Then Dr. Hope maintains that dreamscape, and the visitors can leave that dreamscape and enter into the near-marches
+04	S05-04-008	01:31:06,825	01:31:08,887	Doctor_Hope	major	Dream objects into the physical world	exact	1.000	We don't know that it can be mapped.
+04	S05-04-009	01:31:09,267	01:31:11,869	Doctor_Hope	major		propagated	0.000	When I say geography, I use that term loosely.
+04	S05-04-010	01:31:12,450	01:31:25,580	Doctor_Hope	major		propagated	0.000	There appear to be things people run into consistently, but to say that they're always the same distance or how they relate to each other in a space way is diff
+04	S05-04-017	01:31:52,292	01:32:03,181	Doctor_Hope	major	Dream objects into the physical world	fuzzy	0.981	And it was through the help of Vicar General Smoke that we were able to hook up with a new species of creature.
+04	S05-04-019	01:32:06,304	01:32:11,107	Doctor_Hope	major		propagated	0.000	They're like spiders that live in human consciousness.
+04	S05-04-020	01:32:12,108	01:32:16,392	Doctor_Hope	major		propagated	0.000	And they crawl between everybody's dreamscapes.
+04	S05-04-043	01:33:50,667	01:34:02,975	Doctor_Hope	major	Dream objects into the physical world	exact	1.000	And that location happens to be a haunted house down on the shore in a carnival on Lake Michigan.
+04	S05-04-044	01:34:03,655	01:34:19,445	Doctor_Hope	major	Dream objects into the physical world	fuzzy	0.997	So if you guys can find the Dreamweaver spiders and bring an object to them, they should be able to carry it to the ethereal tether, and it should appear in the
+04	S05-04-045	01:34:20,357	01:34:21,198	Doctor_Hope	major		propagated	0.000	So that's our hope.
+04	S05-04-046	01:34:21,558	01:34:28,241	Doctor_Hope	major		propagated	0.000	Our hope is that Dr. Hope can project you into Bob's dream.
+04	S05-04-047	01:34:28,922	01:34:40,448	Doctor_Hope	major		propagated	0.000	You can leave the dreamscape, find some objects that Vicar General Smokes said you can consistently find in dreams, bring it to the dream weaver spiders, and ha
+04	S05-04-048	01:34:41,489	01:34:42,549	Doctor_Hope	major	Dream objects into the physical world	exact	1.000	Do you have any questions?
+04	S05-04-061	01:35:44,134	01:35:44,974	Doctor_Hope	major	Dream objects into the physical world	exact	1.000	Isn't that right, Bob?
+04	S05-04-062	01:35:45,174	01:35:46,675	Doctor_Hope	major		propagated	0.000	Bob's like that on the tape.
+04	S05-04-133	01:42:23,302	01:42:33,403	Doctor_Hope	major	Preparing for astral projection	exact	1.000	All right, so what's going to happen here is you're going to lay down on some of the beds.
+04	S05-04-134	01:42:34,944	01:42:37,424	Doctor_Hope	major		propagated	0.000	I, Dr. Hope, am going to lay down another one.
+04	S05-04-135	01:42:37,444	01:42:38,924	Doctor_Hope	major		propagated	0.000	Olive, along with Bob,
+04	S05-04-136	01:42:42,905	01:42:50,631	Doctor_Hope	major		propagated	0.000	And all of our, there will be electrodes applied to our heads to connect our brains to the machine.
+04	S05-04-137	01:42:51,572	01:42:59,778	Doctor_Hope	major		propagated	0.000	And then Dr. Mike will induce Bob into a dream state.
+04	S05-04-138	01:43:00,419	01:43:05,563	Doctor_Hope	major		propagated	0.000	Once he's into his dream state, I will then enter into doing astral projection.
+04	S05-04-139	01:43:06,503	01:43:08,185	Doctor_Hope	major		propagated	0.000	When I do my astral projection,
+04	S05-04-140	01:43:10,156	01:43:14,039	Doctor_Hope	major		propagated	0.000	It's a one step, it's not a two step.
+04	S05-04-141	01:43:14,400	01:43:24,449	Doctor_Hope	major		propagated	0.000	So what that means is with the help of the machine, I will share my astral projection power in a top down way with both of you.
+04	S05-04-142	01:43:25,090	01:43:32,937	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.939	When that occurs, your physical bodies will enter a sleep like state and will become essentially paralyzed.
+04	S05-04-143	01:43:33,758	01:43:48,506	Doctor_Hope	major		propagated	0.000	as will mine, as that happens with everybody who astral projects, and our mind, our spirit, our body, our soul, I mean, our soul, our spirit, our mind, will lea
+04	S05-04-144	01:43:49,106	01:43:55,530	Doctor_Hope	major	Preparing for astral projection	exact	1.000	With the help of the machine, we will then be immediately sucked into Bob's dream space.
+04	S05-04-145	01:43:56,310	01:44:04,837	Doctor_Hope	major		propagated	0.000	Now luckily, given Bob's personality and the techniques of Dr. Mike, Bob's dream space is very neutral.
+04	S05-04-146	01:44:05,037	01:44:10,921	Doctor_Hope	major		propagated	0.000	And there's not going to be anything for us to worry about or, or anything in there, it'll just be kind of a simple space.
+04	S05-04-147	01:44:12,002	01:44:18,547	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.986	Once we're into the space, I need to explain some stuff about being astral.
+04	S05-04-148	01:44:19,428	01:44:22,090	Doctor_Hope	major		propagated	0.000	You are a you are your mind.
+04	S05-04-149	01:44:22,982	01:44:29,269	Doctor_Hope	major		propagated	0.000	something were to happen, and it can, you can take damage astrally.
+04	S05-04-150	01:44:29,970	01:44:33,654	Doctor_Hope	major		propagated	0.000	Like I said, some of those constructs people have run into in the
+04	S05-04-151	01:44:41,454	01:44:51,383	Doctor_Hope	major		propagated	0.000	If you die astrally, if your astral body is destroyed, your physical body remains alive, but it will be a mindless husk.
+04	S05-04-152	01:44:51,964	01:44:58,509	Doctor_Hope	major		propagated	0.000	It will just be a living chunk of protoplasm with no mind at all.
+04	S05-04-153	01:45:02,354	01:45:07,717	Doctor_Hope	major		propagated	0.000	connected via a silver tether.
+04	S05-04-154	01:45:08,377	01:45:12,980	Doctor_Hope	major		propagated	0.000	It goes from your astral belly button to your physical belly button.
+04	S05-04-155	01:45:13,640	01:45:26,487	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.979	And at any given point, you should be able to see this silver thread coming off of your astral body, going all the way back through astral space and dream to yo
+04	S05-04-156	01:45:26,887	01:45:31,830	Doctor_Hope	major		propagated	0.000	If you ever become disoriented, you can grab the thread and
+04	S05-04-157	01:45:31,990	01:45:33,731	Doctor_Hope	major		propagated	0.000	pull yourself back to your body.
+04	S05-04-158	01:45:35,653	01:45:46,901	Doctor_Hope	major		propagated	0.000	If something were to sever that thread, we have only ever heard rumors, we've never experienced it, your mind would be set free from your body.
+04	S05-04-159	01:45:46,981	01:45:59,410	Doctor_Hope	major		propagated	0.000	Your body would then become mindless, but having not died, perhaps there's a way an untethered spirit could be brought back to the body, but we don't know.
+04	S05-04-161	01:46:03,795	01:46:09,657	Doctor_Hope	major		propagated	0.000	It seems to permeate every realm change that goes through within the realm of dream.
+04	S05-04-162	01:46:09,677	01:46:13,078	Doctor_Hope	major		propagated	0.000	And again, it is your way back.
+04	S05-04-163	01:46:13,098	01:46:24,601	Doctor_Hope	major		propagated	0.000	If you ever become completely disoriented, you can haul yourself back to your body through the tether, through the silver thread.
+04	S05-04-164	01:46:27,170	01:46:30,912	Doctor_Hope	major		propagated	0.000	you are a mental construct in the astral plane.
+04	S05-04-165	01:46:31,632	01:46:38,116	Doctor_Hope	major		propagated	0.000	So all of your physical skills and toughness are immaterial will not will not apply.
+04	S05-04-166	01:46:39,077	01:46:52,764	Doctor_Hope	major		propagated	0.000	If you run into any danger, any physical, what feels like a physical action inside the astral plane or within dream will be relying upon your mental powers, not
+04	S05-04-167	01:46:54,302	01:46:59,193	Doctor_Hope	major		propagated	0.000	through your dexterity, but your mind, your soul.
+04	S05-04-169	01:47:05,217	01:47:14,840	Doctor_Hope	major		propagated	0.000	In order to transition between realms, you need to use your astral projection skill.
+04	S05-04-170	01:47:15,380	01:47:16,580	Doctor_Hope	major		propagated	0.000	But you don't have that.
+04	S05-04-171	01:47:17,021	01:47:17,441	Doctor_Hope	major		propagated	0.000	I do.
+04	S05-04-172	01:47:18,021	01:47:24,643	Doctor_Hope	major		propagated	0.000	And my sharing will allow you to use my skill at a lower level on your behalf.
+04	S05-04-173	01:47:24,903	01:47:25,323	Doctor_Hope	major		propagated	0.000	I don't know
+04	S05-04-174	01:47:25,403	01:47:27,124	Doctor_Hope	major		propagated	0.000	exactly what it will be for you.
+04	S05-04-175	01:47:27,144	01:47:28,324	Doctor_Hope	major		propagated	0.000	It will be individual.
+04	S05-04-176	01:47:29,005	01:47:34,547	Doctor_Hope	major		propagated	0.000	So once you get in there, you may have to use an effort to borrow my skill.
+04	S05-04-178	01:47:35,968	01:47:38,529	Doctor_Hope	major		propagated	0.000	Once you get used to it, you'll be able to navigate.
+04	S05-04-179	01:47:39,349	01:47:41,790	Doctor_Hope	major	Preparing for astral projection	exact	1.000	Those are the basic dangers we know of.
+04	S05-04-180	01:47:42,370	01:47:45,452	Doctor_Hope	major		propagated	0.000	We know of- What about protecting yourself in the realm?
+04	S05-04-188	01:48:30,360	01:48:41,922	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.942	If you have like, a resistance to fear or strong will, it will seem like your your astral body is physically tougher, it'll be harder to penetrate.
+04	S05-04-190	01:48:51,273	01:48:52,494	Doctor_Hope	major	Preparing for astral projection	exact	1.000	Are there any other questions?
+04	S05-04-192	01:48:53,954	01:48:58,376	Doctor_Hope	major		propagated	0.000	Again, the things we do know, people have been attacked by constructs.
+04	S05-04-193	01:48:59,037	01:49:01,758	Doctor_Hope	major		propagated	0.000	There have been rumors of people being cut free.
+04	S05-04-194	01:49:02,298	01:49:08,861	Doctor_Hope	major	Preparing for astral projection	exact	1.000	We have seen people take damage and die astrally and their bodies become vegetables, never to recover.
+04	S05-04-195	01:49:15,177	01:49:26,280	Doctor_Hope	major		propagated	0.000	Among some other researchers, they have documented things they've called eagle worms and id leeches, but we don't know anything about those.
+04	S05-04-196	01:49:26,440	01:49:29,281	Doctor_Hope	major		propagated	0.000	They just, they don't sound good.
+04	S05-04-197	01:49:29,521	01:49:33,742	Doctor_Hope	major		propagated	0.000	So if you run into those, I don't know, avoid them.
+04	S05-04-198	01:49:35,123	01:49:43,705	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.936	So I will do my best to stay in Bob's dreamland and defend it astrally so that you can come back to it to reenter.
+04	S05-04-199	01:49:45,087	01:49:47,148	Doctor_Hope	major		propagated	0.000	your bodies.
+04	S05-04-200	01:49:49,208	01:50:05,973	Doctor_Hope	major		propagated	0.000	In the event that I fail or are unable to maintain my position, then you will lose your astral abilities too and you will be yanked back to your body almost ins
+04	S05-04-201	01:50:06,033	01:50:13,955	Doctor_Hope	major		propagated	0.000	It can be a little disorienting, but it should be safe, you know, so you should get out of any pain.
+04	S05-04-204	01:50:23,152	01:50:24,033	Doctor_Hope	major	Preparing for astral projection	fuzzy	0.923	Uh, what about you, sir?
+04	S05-04-207	01:50:26,234	01:50:41,643	Doctor_Hope	major		propagated	0.000	So, uh, uh, we have, um, some, uh, patient gowns that you can change into, uh, to make yourself more comfortable when you're laying down on the table and, uh, w
+04	S05-04-210	01:50:44,438	01:50:46,519	Doctor_Hope	major	Preparing for astral projection	propagated	0.000	So are you going to leave your stocking on your face?
+04	S05-04-214	01:50:49,140	01:50:58,226	Doctor_Hope	major		propagated	0.000	So, uh, when, uh, when you, uh, you guys, uh, come and play down the table, they come up to you and they're like, we've got to put electrodes on, on your forehe
+04	S05-04-215	01:50:58,306	01:50:59,847	Doctor_Hope	major		propagated	0.000	You got to take the stock off.

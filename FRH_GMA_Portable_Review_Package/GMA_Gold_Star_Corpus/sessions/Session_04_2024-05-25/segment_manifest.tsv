@@ -1,0 +1,7 @@
+segment_index	segment_id	start	end	segment_md	review_md	npc_overlays	scene_titles
+01	S04-01	00:00:00,000	00:30:00,000	segments_md/Session_04_2024-05-25_segment_01.md	reviews_md/Session_04_2024-05-25_segment_01_review.md		Opening banter and getting settled | Horror movie and cosmic-horror talk before the recap | Sean's recap before play resumes | The next morning on the train
+02	S04-02	00:30:00,000	01:00:00,000	segments_md/Session_04_2024-05-25_segment_02.md	reviews_md/Session_04_2024-05-25_segment_02_review.md		
+03	S04-03	01:00:00,000	01:30:00,000	segments_md/Session_04_2024-05-25_segment_03.md	reviews_md/Session_04_2024-05-25_segment_03_review.md	Kobayashi	Kobayashi becomes Mr. Smoke's contact | The St. Louis nail and Preston's contract | The senator thread turns dangerous | Auggie's delivery, heavenly tether briefing, and split-mission talk | Break and table scheduling talk
+04	S04-04	01:30:00,000	02:00:00,000	segments_md/Session_04_2024-05-25_segment_04.md	reviews_md/Session_04_2024-05-25_segment_04_review.md	Kobayashi	Break and table scheduling talk | More scheduling and side-session planning | Back into play after the break | Arrival at the Governor Hotel
+05	S04-05	02:00:00,000	02:30:00,000	segments_md/Session_04_2024-05-25_segment_05.md	reviews_md/Session_04_2024-05-25_segment_05_review.md		Arrival at the Governor Hotel | Settling into the suites
+06	S04-06	02:30:00,000	03:00:00,000	segments_md/Session_04_2024-05-25_segment_06.md	reviews_md/Session_04_2024-05-25_segment_06_review.md		

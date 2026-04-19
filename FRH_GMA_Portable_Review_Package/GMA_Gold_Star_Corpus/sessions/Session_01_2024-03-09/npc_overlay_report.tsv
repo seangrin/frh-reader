@@ -1,0 +1,55 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+03	S01-03-294	01:17:14,171	01:17:19,414	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	But why don't you tell me a little bit about your work in the desert Southwest?
+03	S01-03-392	01:22:55,107	01:22:58,409	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	I can't wait to see what you guys find in Atlantic City.
+03	S01-03-393	01:23:02,711	01:23:08,634	Reagan	major		propagated	0.000	Do you want to stay here and rather than go back to your I got more sleeper in rooms in this
+03	S01-03-394	01:23:09,596	01:23:11,277	Reagan	major		propagated	0.000	in this car that I need.
+03	S01-03-395	01:23:11,297	01:23:12,538	Reagan	major		propagated	0.000	I mean, it's just me.
+03	S01-03-436	01:24:58,801	01:25:01,323	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	You know, I think I saw a ghost when I was a kid.
+03	S01-03-437	01:25:01,343	01:25:03,144	Reagan	major		propagated	0.000	It was kind of a...
+03	S01-03-438	01:25:03,607	01:25:10,629	Reagan	major		propagated	0.000	I mean, it may have been a noise from the radiator and some steam, but I swear there was a ghost in my room when I was seven.
+03	S01-03-450	01:25:33,768	01:25:35,429	Reagan	major	Matthew follows Reagan into the guarded private car	fuzzy	0.953	Are they on the train or in the Atlantic City?
+03	S01-03-454	01:25:38,570	01:25:39,230	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	Where are they at?
+03	S01-03-458	01:25:44,292	01:25:46,392	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	Are they in a public car or a private car?
+03	S01-03-460	01:25:47,392	01:25:48,793	Reagan	major	Matthew follows Reagan into the guarded private car	fuzzy	0.958	You guys have your own private car?
+03	S01-03-462	01:25:49,793	01:25:50,553	Reagan	major		propagated	0.000	Oh my goodness.
+03	S01-03-464	01:25:51,934	01:25:53,074	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	Are they part of your staff?
+03	S01-03-468	01:25:59,898	01:26:01,878	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	Who's the academic you're studying with?
+03	S01-03-474	01:26:10,480	01:26:12,640	Reagan	major	Matthew follows Reagan into the guarded private car	exact	1.000	I never get to meet any spiritualists from Europe.
+03	S01-03-477	01:26:16,801	01:26:17,801	Reagan	major		propagated	0.000	So are we going now?
+04	S01-04-401	01:46:26,894	01:46:28,076	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	I'm a friend of Matthew.
+04	S01-04-402	01:46:28,116	01:46:29,738	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	He's invited me along on your expedition.
+04	S01-04-403	01:46:29,758	01:46:30,899	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	I'm going to provide some funding.
+04	S01-04-404	01:46:31,359	01:46:34,763	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	We're going to take the object you guys found and we're going to figure out how to save Tokyo.
+04	S01-04-405	01:46:35,244	01:46:36,565	Reagan	major		propagated	0.000	So I'm very excited to meet you.
+04	S01-04-406	01:46:36,866	01:46:37,527	Reagan	major		propagated	0.000	What is your name, sir?
+04	S01-04-407	01:46:37,787	01:46:38,648	Reagan	major	Matthew drags Reagan and the whole story back to the team car	propagated	0.000	He reaches his hand out.
+04	S01-04-408	01:46:43,890	01:46:50,112	Reagan	major	Matthew drags Reagan and the whole story back to the team car	fuzzy	0.964	Oh, well, uh, I was fortunate enough to meet the very talented and famous Matthew Bridges.
+04	S01-04-409	01:46:50,652	01:46:56,674	Reagan	major		propagated	0.000	He was, he, he, uh, he came back to, uh, yes, yes, yes.
+04	S01-04-410	01:46:56,714	01:47:00,316	Reagan	major		propagated	0.000	I saw his, I saw him do a seminar at UCLA.
+04	S01-04-412	01:47:08,503	01:47:10,304	Reagan	major		propagated	0.000	No, I saw him at UCLA.
+04	S01-04-413	01:47:10,324	01:47:12,045	Reagan	major		propagated	0.000	He put in a really good presentation there.
+04	S01-04-414	01:47:12,065	01:47:23,331	Reagan	major		propagated	0.000	I ran into him on the train, and he was telling me about some of his explorations in the desert southwest, and he mentioned he had come across an object, and th
+04	S01-04-415	01:47:23,831	01:47:26,212	Reagan	major		propagated	0.000	And I expressed my interest in maybe assisting
+04	S01-04-416	01:47:26,746	01:47:44,352	Reagan	major		propagated	0.000	with figuring out about this object, in which he explained that actually, no, you and a group of his followers, him and his followers, were going to go to Atlan
+04	S01-04-417	01:47:44,372	01:47:48,994	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	And so we've got to find out what this object has to do with Atlantic City so we can save Tokyo.
+04	S01-04-418	01:47:49,514	01:47:51,595	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	And so, I mean, you guys work for Matthew.
+04	S01-04-419	01:47:52,055	01:47:53,636	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	So, you know, what do you do for Matthew?
+04	S01-04-424	01:48:07,011	01:48:07,951	Reagan	major		propagated	0.000	What are you?
+04	S01-04-425	01:48:08,011	01:48:09,012	Reagan	major	Matthew drags Reagan and the whole story back to the team car	propagated	0.000	Who are you again, sir?
+04	S01-04-426	01:48:09,292	01:48:10,153	Reagan	major		propagated	0.000	I know Matthew.
+04	S01-04-427	01:48:10,533	01:48:11,574	Reagan	major		propagated	0.000	I don't know who you are.
+04	S01-04-428	01:48:12,475	01:48:13,435	Reagan	major	Matthew drags Reagan and the whole story back to the team car	propagated	0.000	Matthew, who is this?
+04	S01-04-429	01:48:14,216	01:48:15,237	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	Does he work for you or not?
+04	S01-04-431	01:48:23,863	01:48:27,626	Reagan	major	Matthew drags Reagan and the whole story back to the team car	fuzzy	0.976	I'll go put my my suitcase up and try to find my own sleeping pod.
+04	S01-04-432	01:48:27,766	01:48:30,388	Reagan	major		propagated	0.000	OK, so the gentleman starts hitting back.
+04	S01-04-433	01:48:39,480	01:48:41,081	Reagan	major		propagated	0.000	This is not Matthew Bridges.
+04	S01-04-434	01:48:41,101	01:48:42,282	Reagan	major		propagated	0.000	I know this is Matthew Bridges.
+04	S01-04-435	01:48:42,322	01:48:43,563	Reagan	major		propagated	0.000	I saw him at UCLA.
+04	S01-04-436	01:48:43,583	01:48:44,663	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	This is definitely Matthew Bridges.
+04	S01-04-437	01:48:45,004	01:48:46,224	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	You, sir, I do not know.
+04	S01-04-438	01:48:46,745	01:48:49,046	Reagan	major		propagated	0.000	Would you like me to get my detectives over here to deal with this gentleman?
+04	S01-04-439	01:48:49,066	01:48:50,247	Reagan	major		propagated	0.000	Does he need to be off your car?
+04	S01-04-452	01:49:55,112	01:49:56,453	Reagan	major	Matthew drags Reagan and the whole story back to the team car	exact	1.000	Are you Matthew Bridges or not?
+05	S01-05-004	02:00:04,203	02:00:06,285	Reagan	major	Matthew extracts the suitcase while Reagan searches his own car	exact	1.000	Detectives, detectives, where are you?
+05	S01-05-005	02:00:07,205	02:00:14,951	Reagan	major		propagated	0.000	And this gentleman starts walking through, and it's the same guy who was with Matthew earlier heading back to the car, but he's not with Matthew now.
+05	S01-05-006	02:00:14,971	02:00:20,415	Reagan	major		propagated	0.000	He just has a suitcase and he's now walking through this car looking in the various rooms.

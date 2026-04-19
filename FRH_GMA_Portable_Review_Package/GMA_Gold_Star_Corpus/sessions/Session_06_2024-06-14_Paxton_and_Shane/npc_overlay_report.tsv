@@ -1,0 +1,37 @@
+segment_index	line_id	start	end	persona	tier	scene_title	match_method	match_score	text_preview
+01	S06-01-027	00:03:12,058	00:03:15,719	Kobayashi	major		text_inferred	0.000	The attorney is is is Kobayashi.
+02	S06-02-064	00:34:45,033	00:34:46,733	Kobayashi	major		text_inferred	0.000	It was from Kobayashi, right?
+02	S06-02-065	00:34:46,953	00:34:49,574	Kobayashi	major	Arrival at the Basilica of St. Louis	text_inferred	0.000	Yes, Kobayashi brought the information.
+02	S06-02-066	00:34:50,674	00:34:51,194	Kobayashi	major		propagated	0.000	I got you.
+02	S06-02-068	00:34:54,869	00:34:56,452	Kobayashi	major		text_inferred	0.000	Kobayashi is still in town.
+02	S06-02-069	00:34:56,472	00:34:58,356	Kobayashi	major		propagated	0.000	You still have the address he was at.
+03	S06-03-101	01:07:12,394	01:07:17,555	Kobayashi	major		text_inferred	0.000	Kobayashi said the nail was in the basement of the church.
+03	S06-03-102	01:07:17,895	01:07:19,155	Kobayashi	major		propagated	0.000	Was in the basement of the church?
+03	S06-03-104	01:07:23,433	01:07:27,434	Kobayashi	major	Amber clears out and Preston gets the debrief	propagated	0.000	He didn't say tomb, he didn't say ossuary, he didn't say nave, he said basement.
+03	S06-03-105	01:07:28,255	01:07:29,175	Kobayashi	major	Amber clears out and Preston gets the debrief	propagated	0.000	Like at the Alamo.
+03	S06-03-107	01:07:30,936	01:07:31,716	Kobayashi	major	Amber clears out and Preston gets the debrief	propagated	0.000	Like at the Alamo.
+03	S06-03-108	01:07:32,756	01:07:35,157	Kobayashi	major		propagated	0.000	No, no, there's a basement.
+04	S06-04-247	01:46:23,961	01:46:37,488	Kobayashi	major		text_inferred	0.000	Smoke and Kobayashi, Rome still thinks this is in Paris, not in St. Louis and not in the basement.
+04	S06-04-248	01:46:38,678	01:46:40,618	Kobayashi	major		propagated	0.000	So why is it here?
+04	S06-04-249	01:46:41,499	01:46:44,979	Kobayashi	major		propagated	0.000	Who put it here and where would they put it?
+04	S06-04-250	01:46:45,439	01:46:50,701	Kobayashi	major	Down in the sepulcher	propagated	0.000	So I'm going to say probably not in a giant cross display.
+05	S06-05-057	02:02:00,263	02:02:08,007	Kobayashi	major	Down in the sepulcher	text_inferred	0.000	Yes, Kobayashi said if you're able to acquire the object, he would then provide the information for the demonic entity who's willing to trade access to the cont
+05	S06-05-149	02:08:18,014	02:08:24,375	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	Or do you want to go to your very, very nice hotel that you're paying thousands of dollars and ask the concierge to find a knife?
+05	S06-05-150	02:08:24,395	02:08:24,855	Hotel_Concierge	major		propagated	0.000	That's what I'll do.
+05	S06-05-151	02:08:25,115	02:08:25,616	Hotel_Concierge	major		propagated	0.000	That's what I'll do.
+05	S06-05-152	02:08:25,876	02:08:29,316	Hotel_Concierge	major		propagated	0.000	Maybe he knows a private knife manufacturer.
+05	S06-05-159	02:08:49,726	02:09:02,630	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	Okay, with savoir-faire, you know, you could ask the concierge anything from, I need a guy who can make a knife to, do you know somebody who makes knives for li
+05	S06-05-273	02:16:02,113	02:16:05,599	Hotel_Concierge	major		text_inferred	0.000	Do you want to use the concierge at the hotel that you're paying for?
+05	S06-05-274	02:16:05,720	02:16:08,124	Hotel_Concierge	major		propagated	0.000	Or do you want to try to use your own skills?
+05	S06-05-285	02:16:41,617	02:16:45,279	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	So you got to go to the concierge and see if he can hook you up with an occult society.
+05	S06-05-286	02:16:48,361	02:16:50,082	Hotel_Concierge	major	Down in the sepulcher	propagated	0.000	Did he step out to take care of his kitty cat?
+05	S06-05-295	02:17:11,694	02:17:21,497	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	So, um, so you got to go to the concierge and see if he can help you find, uh, an occult society that might have a good library dealing with, uh, celestial bein
+05	S06-05-317	02:18:28,351	02:18:40,260	Hotel_Concierge	major		text_inferred	0.000	Brimstone Collective, they're an offshoot of the Hellfire Club out of the UK, and they have a library that they say includes books on angelic magic.
+05	S06-05-319	02:18:45,551	02:18:52,532	Hotel_Concierge	major	Down in the sepulcher	propagated	0.000	So he can get a invitation for you to one of their parties tonight.
+05	S06-05-320	02:18:52,972	02:18:56,573	Hotel_Concierge	major	Down in the sepulcher	propagated	0.000	That would be the only way you could get there.
+05	S06-05-321	02:18:57,133	02:19:02,234	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	He does say when you go to the party, you must wear a domino mask and be prepared to have sex.
+05	S06-05-328	02:19:19,833	02:19:22,374	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	Well, the party's not till this evening.
+05	S06-05-329	02:19:23,395	02:19:28,797	Hotel_Concierge	major	Down in the sepulcher	propagated	0.000	So you guys finished up by about two o'clock in the afternoon.
+05	S06-05-330	02:19:28,957	02:19:31,979	Hotel_Concierge	major	Down in the sepulcher	propagated	0.000	You've got about six hours before you need to go anywhere.
+05	S06-05-331	02:19:36,584	02:19:42,246	Hotel_Concierge	major	Down in the sepulcher	text_inferred	0.000	I mean, I hope... And he's still waiting for the concierge to hunt down somebody to meet his requirements.
+05	S06-05-352	02:20:59,177	02:21:04,062	Hotel_Concierge	major		text_inferred	0.000	You need to ask the concierge.
