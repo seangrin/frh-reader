@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRH Current AI Architecture - Program Manager Memo</title>
+  <link rel="stylesheet" href="../thread_style.css">
+
+    <style>
+      .memo-index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+      .memo-index-card,
+      .memo-note-card,
+      .memo-article {
+        background: rgba(255, 252, 246, 0.92);
+        border: 1px solid rgba(126, 91, 46, 0.18);
+        box-shadow: 0 10px 22px rgba(53, 37, 20, 0.06);
+      }
+      .memo-index-card {
+        padding: 1rem 1.05rem;
+      }
+      .memo-index-card h2,
+      .memo-index-card h3 {
+        margin-top: 0;
+      }
+      .memo-note-card {
+        padding: 0.95rem 1rem;
+        margin: 0 0 1rem;
+      }
+      .memo-article {
+        padding: 1.1rem 1.2rem 1.25rem;
+      }
+      .memo-article h1:first-child {
+        margin-top: 0;
+      }
+      .memo-article h1,
+      .memo-article h2,
+      .memo-article h3 {
+        line-height: 1.2;
+      }
+      .memo-article code {
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .memo-article p,
+      .memo-article li {
+        max-width: 48rem;
+      }
+      .memo-article ul {
+        margin-left: 1.25rem;
+      }
+      .memo-meta {
+        color: var(--muted, #6f6254);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 700px) {
+        .memo-index-card,
+        .memo-note-card,
+        .memo-article {
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+        }
+      }
+    </style>
+
+</head>
+<body id="top">
+  <main>
+    <div class="provenance-bar"><p>This website presentation and its added art were created with LLM assistance. The FRH game, setting, and campaign content are fully human-authored.<sup><a class="provenance-footnote" href="../memo_family.html">Memo Family</a></sup></p></div>
+    
+    <header>
+      <p class="part">Memo Family</p>
+      <h1>FRH Current AI Architecture - Program Manager Memo</h1>
+      <p class="deck">A local styled copy of one FRH architecture memo, carried inside this site so the memo family remains portable and self-contained.</p>
+      <p class="navline">
+        <a href="../index.html">Reader Home</a> |
+        <a href="../memo_family.html">Memo Family</a>
+      </p>
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+      </div>
+    </header>
+
+    <section class="memo-note-card">
+      <p class="memo-meta"><strong>LLM artifact note:</strong> this memo is itself an LLM-generated architecture artifact preserved as part of the FRH working record. It is presented here in site-native formatting for continuity, portability, and reader access.</p>
+      <p class="memo-meta"><strong>Master source:</strong> FRH_Current_AI_Architecture_Program_Manager_Memo_2026-05-03.html</p>
+    </section>
+
+    <article class="memo-article">
+<h1>FRH Current AI Architecture - Program Manager Memo</h1>
+<p>Date: 2026-05-03</p>
+
+<h2>Purpose</h2>
+<p>This memo explains the current FRH AI architecture in program-manager terms after the Codex FRH agent experiment, the addition of <code>Web_Reader</code>, and the discovery that transcript export is a continuity requirement rather than an optional convenience.</p>
+
+<h2>Executive Summary</h2>
+<p>The FRH project still uses the same core role-separated architecture described in the March memo set, but it is now stronger in three important ways:</p>
+<ul>
+  <li>it has a real publication lane</li>
+  <li>it has proven portable across multiple model and tool environments</li>
+  <li>it now treats full local export of agent chat transcripts as a disaster-recovery control</li>
+</ul>
+
+<p>The key lesson remains the same: AI becomes useful in serious work when it is wrapped in an operating model. What changed is that the operating model has now proven itself under more realistic pressure, including cross-tool movement, publication workflows, and explicit vendor-risk concerns.</p>
+
+<h2>The Current Lane Model</h2>
+<p>The architecture now has five visible functional lanes:</p>
+<ul>
+  <li><code>CTC</code> - primary operator/build lane</li>
+  <li><code>GMA</code> - higher-order interpretive and scenario review lane</li>
+  <li><code>Parser</code> - safe structural adapter to legacy truth formats</li>
+  <li><code>DR_Lab</code> - backup, continuity, rollback, and recovery lane</li>
+  <li><code>Web_Reader</code> - staging, publication, and presentation lane</li>
+</ul>
+
+<p>That is an important evolution. Earlier memos described a productive local architecture. The current state describes a productive local architecture with a completed downstream publishing path.</p>
+
+<h2>What It Has Already Delivered</h2>
+<p>This architecture has now produced two strong real-world outputs that make the value proposition easier to explain:</p>
+<ul>
+  <li>a <strong>Sample Character Library website flow</strong> built from locally engineered character artifacts, including images, HTML, and refreshed PDFs, then promoted to <code>Web_Reader</code> and published to GitHub Pages</li>
+  <li>a <strong>New Player Packet website flow</strong> built from explanatory and onboarding material, reauthored into a web-readable structure locally and then polished and published through <code>Web_Reader</code></li>
+</ul>
+
+<p>That matters because these are not toy outputs. They are high-quality, public-facing deliverables emerging from a knowledge domain that is unusually computer-unfriendly: a custom tabletop role-playing framework built on subtle setting logic, narrative design, and legacy mechanical artifacts.</p>
+
+<p>In program-manager terms, this means the architecture has crossed a crucial threshold. It is not merely helping an expert think faster. It is coordinating multiple specialized lanes to produce publishable assets.</p>
+
+<h2>Why This Matters Operationally</h2>
+<p>Many AI writeups fail because they stop at the idea-generation layer. FRH no longer stops there. It now demonstrates a full working chain:</p>
+<p>authoring - review - structural handling - validation - recovery - publication</p>
+
+<p>That makes the architecture easier to explain to technical leadership, operations staff, and management because it is no longer just a creative workflow. It is a small but real operating system around difficult expert work.</p>
+
+<h2>What The Codex Experiment Proved</h2>
+<p>The Codex-centered <code>CTC</code> lane showed that direct local workspace access, patching, shell usage, and artifact-aware execution improve reliability and throughput. However, the experiment did not eliminate the earlier architectural rules. It reinforced them.</p>
+
+<p>The same controls are still required:</p>
+<ul>
+  <li>human SME oversight</li>
+  <li>external systems of record</li>
+  <li>role separation</li>
+  <li>durable artifacts</li>
+  <li>backup and recovery discipline</li>
+</ul>
+
+<p>In program-manager language, the tool got better, but the operating model was what made the tool safe to trust.</p>
+
+<h2>The Most Important New Discovery</h2>
+<p>The single most important cross-model and DR discovery is the need to export full agent chat transcripts to local files.</p>
+
+<p>This must now be treated as a standard control because:</p>
+<ul>
+  <li>vendors can raise token costs unexpectedly</li>
+  <li>vendors can close or restrict accounts without warning or explanation</li>
+  <li>project continuity must not depend on a hosted conversation history remaining accessible</li>
+  <li>cross-model transfer requires locally owned operational memory</li>
+</ul>
+
+<p>For management, this is the key continuity point: if the architecture's memory lives only inside a vendor account, then the architecture does not truly belong to the operator.</p>
+
+<h2>Portability Is Now Proven</h2>
+<p>The FRH architecture has now shown meaningful portability across:</p>
+<ul>
+  <li>Codex</li>
+  <li>Claude Code</li>
+  <li>Gemini</li>
+  <li>and even limited local-model experiments such as <code>Gemma 4 E4B</code> on consumer hardware</li>
+</ul>
+
+<p>This matters because it shifts the value proposition away from any single vendor. The real durable asset is the workflow architecture and its local artifact base, not a particular model subscription.</p>
+
+<h2>What Skill Stack Is Required</h2>
+<p>These results do not come from generic prompt usage alone. The architecture still depends on an unusually broad human capability stack:</p>
+<ul>
+  <li>deep subject-matter expertise</li>
+  <li>software and workflow engineering</li>
+  <li>IT backup and disaster-recovery instincts</li>
+  <li>ability to decompose the work into specialized agent lanes</li>
+  <li>willingness to validate against external truth instead of trusting the model's confidence</li>
+</ul>
+
+<p>This is a useful management lesson by itself. The system is not self-running. It is a human-led expert system with AI helpers.</p>
+
+<h2>Business Translation</h2>
+<p>The business pattern is still recognizable:</p>
+<ul>
+  <li>keep the trusted local system of record</li>
+  <li>wrap it with safe adapters and specialized helpers</li>
+  <li>preserve durable local artifacts</li>
+  <li>export the operational memory so continuity does not depend on one vendor</li>
+  <li>maintain recovery-ready backups and deltas</li>
+</ul>
+
+<p>A concrete example is a small business stuck on an older local <code>Peachtree Accounting</code> installation that is too risky or too expensive to replace immediately.</p>
+
+<p>The FRH lane model maps cleanly:</p>
+<ul>
+  <li><code>Parser</code> becomes the safe interface layer for exports, imports, structured edits, and validation around the accounting system's files and reports</li>
+  <li><code>CTC</code> becomes the day-to-day operator helper for invoices, bookkeeping support, customer correspondence, procedural reminders, and routine documentation</li>
+  <li><code>GMA</code> becomes the higher-order reviewer for anomalies, workflow sanity, trends, and management-facing interpretation</li>
+  <li><code>DR_Lab</code> becomes the continuity layer for backups, restores, rollback planning, and verification of recovery readiness</li>
+  <li><code>Web_Reader</code> can become the publishing or presentation lane for client-facing statements, internal portals, reporting dashboards, or cleaned management summaries</li>
+</ul>
+
+<p>The point is not that AI replaces the accounting system. The point is that AI can wrap the legacy system with a more legible, more recoverable operating model while the authoritative business records stay where they already are.</p>
+
+<p>This remains highly portable to small-business and legacy-software environments where replacement is risky but productivity pressure is real.</p>
+
+<h2>Closing Summary</h2>
+<p>The current FRH architecture should be understood as a recoverable, role-specialized, locally anchored AI operating model with a publication lane and proven cross-tool portability.</p>
+
+<p>The most important management-facing lessons are:</p>
+<ul>
+  <li>AI needs a disciplined operating system around it</li>
+  <li>the human SME remains central</li>
+  <li>external validation is mandatory</li>
+  <li>transcript export is now part of disaster recovery</li>
+  <li>the architecture can produce real public outputs even in difficult domains</li>
+  <li>and its real value lies in portability and recoverability, not in dependence on one model vendor</li>
+</ul>
+    </article>
+
+    <div class="page-footer">
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+        <a class="primary" href="#top">Return to Top</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

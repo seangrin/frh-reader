@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memo Family</title>
+  <link rel="stylesheet" href="thread_style.css">
+
+    <style>
+      .memo-index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+      .memo-index-card,
+      .memo-note-card,
+      .memo-article {
+        background: rgba(255, 252, 246, 0.92);
+        border: 1px solid rgba(126, 91, 46, 0.18);
+        box-shadow: 0 10px 22px rgba(53, 37, 20, 0.06);
+      }
+      .memo-index-card {
+        padding: 1rem 1.05rem;
+      }
+      .memo-index-card h2,
+      .memo-index-card h3 {
+        margin-top: 0;
+      }
+      .memo-note-card {
+        padding: 0.95rem 1rem;
+        margin: 0 0 1rem;
+      }
+      .memo-article {
+        padding: 1.1rem 1.2rem 1.25rem;
+      }
+      .memo-article h1:first-child {
+        margin-top: 0;
+      }
+      .memo-article h1,
+      .memo-article h2,
+      .memo-article h3 {
+        line-height: 1.2;
+      }
+      .memo-article code {
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .memo-article p,
+      .memo-article li {
+        max-width: 48rem;
+      }
+      .memo-article ul {
+        margin-left: 1.25rem;
+      }
+      .memo-meta {
+        color: var(--muted, #6f6254);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 700px) {
+        .memo-index-card,
+        .memo-note-card,
+        .memo-article {
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+        }
+      }
+    </style>
+
+</head>
+<body id="top">
+  <main>
+    <div class="provenance-bar"><p>This website presentation and its added art were created with LLM assistance. The FRH game, setting, and campaign content are fully human-authored.<sup><a class="provenance-footnote" href="memo_family.html">Memo Family</a></sup></p></div>
+    
+    <header>
+      <p class="part">Memo Family</p>
+      <h1>Memo Family</h1>
+      <p class="deck">A tiny local memo website embedded inside this FRH site. These pages preserve the current LLM-architecture memo set as portable, reader-facing artifacts that can travel with each site.</p>
+      <p class="navline">
+        <a href="index.html">Reader Home</a>
+      </p>
+      <div class="chapter-nav">
+        <a class="primary" href="index.html">Reader Home</a>
+      </div>
+    </header>
+
+    <section class="memo-note-card">
+      <p><strong>Why this exists:</strong> each FRH site carries its own local memo copies so the architecture story does not depend on another site, another repo, or one hosted document trail remaining available.</p>
+      <p><strong>Artifact note:</strong> the memo pages themselves are LLM-generated architecture artifacts, styled and linked here for continuity and navigational fit.</p>
+    </section>
+
+    <section class="memo-index-grid">
+      <section class="memo-index-card">
+        <h3>FRH Current AI Architecture - Memo Context</h3>
+        <p><a href="memo_family/FRH_Current_AI_Architecture_Memo_Context_2026-05-03.html">Open memo</a></p>
+      </section>
+      <section class="memo-index-card">
+        <h3>FRH Current AI Architecture - Program Manager Memo</h3>
+        <p><a href="memo_family/FRH_Current_AI_Architecture_Program_Manager_Memo_2026-05-03.html">Open memo</a></p>
+      </section>
+      <section class="memo-index-card">
+        <h3>FRH Current AI Architecture - Technical Overview</h3>
+        <p><a href="memo_family/FRH_Current_AI_Architecture_Technical_Overview_2026-05-03.html">Open memo</a></p>
+      </section>
+    </section>
+
+    <div class="page-footer">
+      <div class="chapter-nav">
+        <a class="primary" href="index.html">Reader Home</a>
+        <a class="primary" href="#top">Return to Top</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

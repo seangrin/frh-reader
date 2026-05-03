@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRH Current AI Architecture - Memo Context</title>
+  <link rel="stylesheet" href="../thread_style.css">
+
+    <style>
+      .memo-index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+      .memo-index-card,
+      .memo-note-card,
+      .memo-article {
+        background: rgba(255, 252, 246, 0.92);
+        border: 1px solid rgba(126, 91, 46, 0.18);
+        box-shadow: 0 10px 22px rgba(53, 37, 20, 0.06);
+      }
+      .memo-index-card {
+        padding: 1rem 1.05rem;
+      }
+      .memo-index-card h2,
+      .memo-index-card h3 {
+        margin-top: 0;
+      }
+      .memo-note-card {
+        padding: 0.95rem 1rem;
+        margin: 0 0 1rem;
+      }
+      .memo-article {
+        padding: 1.1rem 1.2rem 1.25rem;
+      }
+      .memo-article h1:first-child {
+        margin-top: 0;
+      }
+      .memo-article h1,
+      .memo-article h2,
+      .memo-article h3 {
+        line-height: 1.2;
+      }
+      .memo-article code {
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .memo-article p,
+      .memo-article li {
+        max-width: 48rem;
+      }
+      .memo-article ul {
+        margin-left: 1.25rem;
+      }
+      .memo-meta {
+        color: var(--muted, #6f6254);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 700px) {
+        .memo-index-card,
+        .memo-note-card,
+        .memo-article {
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+        }
+      }
+    </style>
+
+</head>
+<body id="top">
+  <main>
+    <div class="provenance-bar"><p>This website presentation and its added art were created with LLM assistance. The FRH game, setting, and campaign content are fully human-authored.<sup><a class="provenance-footnote" href="../memo_family.html">Memo Family</a></sup></p></div>
+    
+    <header>
+      <p class="part">Memo Family</p>
+      <h1>FRH Current AI Architecture - Memo Context</h1>
+      <p class="deck">A local styled copy of one FRH architecture memo, carried inside this site so the memo family remains portable and self-contained.</p>
+      <p class="navline">
+        <a href="../index.html">Reader Home</a> |
+        <a href="../memo_family.html">Memo Family</a>
+      </p>
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+      </div>
+    </header>
+
+    <section class="memo-note-card">
+      <p class="memo-meta"><strong>LLM artifact note:</strong> this memo is itself an LLM-generated architecture artifact preserved as part of the FRH working record. It is presented here in site-native formatting for continuity, portability, and reader access.</p>
+      <p class="memo-meta"><strong>Master source:</strong> FRH_Current_AI_Architecture_Memo_Context_2026-05-03.html</p>
+    </section>
+
+    <article class="memo-article">
+<h1>FRH Current AI Architecture Memo Context</h1>
+<p>Date: 2026-05-03</p>
+
+<h2>Why These Updated Memos Were Written</h2>
+<p>On 2026-03-24, a first architecture memo set was written to explain the then-current FRH AI operating model. Those memos accurately described a role-specialized local workflow centered on <code>CTC</code>, <code>GMA</code>, <code>Parser</code>, and <code>DR_Lab</code>. Since then, the project has advanced far enough that an updated set is warranted.</p>
+
+<p>The most important change is not that the earlier architecture became obsolete. It is that the architecture proved durable, portable, and extensible. The same core pattern still applies, but it now includes a stronger publication lane, a more explicit local-agent operating model, and a much harder-won understanding of recovery and vendor risk.</p>
+
+<h2>What Changed Since March</h2>
+<p>Several practical developments forced a broader and more current description:</p>
+<ul>
+  <li><code>Web_Reader</code> became a real downstream publication lane rather than a hypothetical future surface.</li>
+  <li>The active <code>CTC</code> lane matured into a Codex-centered local agent workspace operating directly on files and tools rather than behaving like a conventional browser chat alone.</li>
+  <li>The architecture proved portable across model and tool environments, including Codex, Claude Code, Gemini, and even limited local use of <code>Gemma 4 E4B</code> with an <code>8K</code> context window on a <code>3080</code>.</li>
+  <li>The project gained more lived evidence around publication, staging, handoff memos, source maps, batch logs, and final web-facing promotion.</li>
+  <li>A much sharper recovery lesson emerged: full local export of agent chat transcripts is mandatory if the system is to survive token pricing shocks, vendor account closures, or unexplained platform lockouts.</li>
+</ul>
+
+<h2>What The Architecture Has Now Produced</h2>
+<p>The updated memos also need to reflect that the architecture is no longer justified only by intermediate workflow success. It has now produced concrete, high-quality, public-facing outputs in a domain that is normally very hostile to structured computing support.</p>
+
+<p>Two especially important examples are:</p>
+<ul>
+  <li>the <strong>Sample Character Library</strong>, where <code>CTC</code> coordinated character engineering, images, master HTML assembly, PDF refresh cycles, verification, staging, and handoff into <code>Web_Reader</code></li>
+  <li>the <strong>New Player Packet website</strong>, where <code>GMA</code>-adjacent reasoning and <code>CTC</code> authoring work helped transform explanatory material into a player-facing web-ready structure that <code>Web_Reader</code> could polish and publish</li>
+</ul>
+
+<p>Both of these local efforts were then packaged, promoted, and sent through <code>Web_Reader</code> for polishing and publication to GitHub Pages. That is exactly the kind of evidence these memos now need to emphasize: this architecture is producing real-world outputs, not merely internal experiments.</p>
+
+<h2>The Current Workspace Family</h2>
+<p>The present architecture spans multiple local workspaces with specialized roles:</p>
+<ul>
+  <li><code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH</code> - active <code>CTC</code> lane</li>
+  <li><code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_GMA</code> - <code>GMA</code> lane</li>
+  <li><code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_DR_Lab</code> - <code>DR_Lab</code> lane</li>
+  <li><code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_Parser_Lab</code> - <code>Parser</code> lane</li>
+  <li><code>C:\Users\seang\OneDrive\Documents\ChatGPT_Web_Reader</code> - publication and presentation lane</li>
+</ul>
+
+<p>In addition, the architecture has been shown to replicate into other model/tool environments, such as:</p>
+<ul>
+  <li><code>C:\Users\seang\OneDrive\Documents\Claude_Code_FRH</code></li>
+  <li>Gemini-driven FRH workspace variants</li>
+  <li>limited local-model experiments</li>
+</ul>
+
+<h2>The New Discovery That Matters Most</h2>
+<p>The single most important discovery since the March memos is that the full exported chat history of the agent lanes must be preserved locally as part of the architecture itself.</p>
+
+<p>This is not mere convenience logging. It is structural recovery protection. The reasons are now practical rather than theoretical:</p>
+<ul>
+  <li>vendor token pricing can change suddenly</li>
+  <li>accounts can be closed or restricted with no warning</li>
+  <li>platform behavior can change faster than a working project can be refactored</li>
+  <li>cross-model portability depends on having the operational memory in local files rather than only inside a vendor-hosted conversation history</li>
+</ul>
+
+<p>In other words, transcript export has become part of disaster recovery, not just part of note-taking.</p>
+
+<h2>What These New Memos Need To Capture</h2>
+<p>The updated memo set therefore needs to explain:</p>
+<ul>
+  <li>that the old role-separated architecture still stands</li>
+  <li>that <code>Web_Reader</code> is now a first-class lane</li>
+  <li>that local-agent tooling made the system stronger, but did not replace the need for role separation or external validation</li>
+  <li>that the architecture is portable across models and tool surfaces</li>
+  <li>that transcript export is a core continuity requirement</li>
+  <li>that the system must be run by a human SME with software-engineering and DR instincts</li>
+  <li>that external systems of record remain essential validators</li>
+</ul>
+
+<h2>Why The Human Role Must Stay Central</h2>
+<p>These memos continue to assume a hard truth already present in the earlier set: the architecture does not work because a model is smart in the abstract. It works because a human subject-matter expert with systems discipline is using specialized agent lanes in a controlled way.</p>
+
+<p>The needed skill stack is still unusually broad:</p>
+<ul>
+  <li>subject-matter expertise</li>
+  <li>software engineering judgment</li>
+  <li>backup and disaster-recovery thinking</li>
+  <li>workflow decomposition into specialized roles</li>
+  <li>taste, acceptance criteria, and willingness to reject model output</li>
+</ul>
+
+<h2>Durable Takeaway</h2>
+<p>The March memos described the transition from exploratory AI assistance into a structured local operating system. These May memos describe the next stage: the same architecture after it proved capable of publication, cross-model transfer, and survival-oriented thinking in a hostile vendor environment.</p>
+
+<p>The architecture should now be understood not just as a productive AI workflow, but as a recoverable multi-lane local system whose memory must remain under local human control and whose outputs can survive contact with the real world in the form of working public artifacts.</p>
+    </article>
+
+    <div class="page-footer">
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+        <a class="primary" href="#top">Return to Top</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

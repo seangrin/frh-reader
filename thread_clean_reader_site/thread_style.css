@@ -56,6 +56,18 @@ p, li { font-size: 1rem; }
 .provenance-bar p {
   margin: 0;
 }
+
+.provenance-footnote {
+  margin-left: 0.22rem;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.provenance-footnote:hover,
+.provenance-footnote:focus {
+  color: var(--accent);
+}
 .deck {
   color: var(--muted);
   font-size: 1.08rem;

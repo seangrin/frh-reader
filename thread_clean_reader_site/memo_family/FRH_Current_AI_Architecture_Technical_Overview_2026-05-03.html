@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRH Current AI Architecture - Technical Overview</title>
+  <link rel="stylesheet" href="../thread_style.css">
+
+    <style>
+      .memo-index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+      .memo-index-card,
+      .memo-note-card,
+      .memo-article {
+        background: rgba(255, 252, 246, 0.92);
+        border: 1px solid rgba(126, 91, 46, 0.18);
+        box-shadow: 0 10px 22px rgba(53, 37, 20, 0.06);
+      }
+      .memo-index-card {
+        padding: 1rem 1.05rem;
+      }
+      .memo-index-card h2,
+      .memo-index-card h3 {
+        margin-top: 0;
+      }
+      .memo-note-card {
+        padding: 0.95rem 1rem;
+        margin: 0 0 1rem;
+      }
+      .memo-article {
+        padding: 1.1rem 1.2rem 1.25rem;
+      }
+      .memo-article h1:first-child {
+        margin-top: 0;
+      }
+      .memo-article h1,
+      .memo-article h2,
+      .memo-article h3 {
+        line-height: 1.2;
+      }
+      .memo-article code {
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .memo-article p,
+      .memo-article li {
+        max-width: 48rem;
+      }
+      .memo-article ul {
+        margin-left: 1.25rem;
+      }
+      .memo-meta {
+        color: var(--muted, #6f6254);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 700px) {
+        .memo-index-card,
+        .memo-note-card,
+        .memo-article {
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+        }
+      }
+    </style>
+
+</head>
+<body id="top">
+  <main>
+    <div class="provenance-bar"><p>This website presentation and its added art were created with LLM assistance. The FRH game, setting, and campaign content are fully human-authored.<sup><a class="provenance-footnote" href="../memo_family.html">Memo Family</a></sup></p></div>
+    
+    <header>
+      <p class="part">Memo Family</p>
+      <h1>FRH Current AI Architecture - Technical Overview</h1>
+      <p class="deck">A local styled copy of one FRH architecture memo, carried inside this site so the memo family remains portable and self-contained.</p>
+      <p class="navline">
+        <a href="../index.html">Reader Home</a> |
+        <a href="../memo_family.html">Memo Family</a>
+      </p>
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+      </div>
+    </header>
+
+    <section class="memo-note-card">
+      <p class="memo-meta"><strong>LLM artifact note:</strong> this memo is itself an LLM-generated architecture artifact preserved as part of the FRH working record. It is presented here in site-native formatting for continuity, portability, and reader access.</p>
+      <p class="memo-meta"><strong>Master source:</strong> FRH_Current_AI_Architecture_Technical_Overview_2026-05-03.html</p>
+    </section>
+
+    <article class="memo-article">
+<h1>FRH Current AI Architecture - Technical Overview</h1>
+<p>Date: 2026-05-03</p>
+
+<h2>Abstract</h2>
+<p>This document describes the current FRH AI architecture after the Codex FRH agent experiment and after the addition of <code>Web_Reader</code> as a first-class publication lane. The architecture remains a role-specialized local operating system built around persistent artifacts, external validators, and recovery discipline. The major technical update is that cross-model portability and transcript-export-based continuity have now become core architectural concerns.</p>
+
+<h2>Table Of Contents</h2>
+<p>1. Purpose 2. Current Problem Shape 3. High-Level Architecture 4. Core Lane Definitions 5. Artifact And Memory Model 6. Source Of Truth And Authority Model 7. Validation Model 8. Publication Model 9. Recovery And Continuity Model 10. Transcript Export As DR Control 11. Portability Across Models And Tools 12. Human Skill Stack Requirements 13. Current Strengths 14. Current Risks 15. Why This Architecture Still Works 16. Transferability 17. Current Operating Summary</p>
+
+<h2>1. Purpose</h2>
+<p>The purpose of this architecture is to make AI assistance useful in a difficult, high-context local workflow without allowing the project to collapse into ephemeral vendor chat, silent drift, unverifiable output, or unrecoverable operational state.</p>
+
+<p>The architecture exists to improve:</p>
+<ul>
+  <li>throughput</li>
+  <li>durability</li>
+  <li>recoverability</li>
+  <li>publication readiness</li>
+  <li>and cross-model survivability</li>
+</ul>
+
+<h2>2. Current Problem Shape</h2>
+<p>FRH remains a difficult AI support problem because it combines:</p>
+<ul>
+  <li>niche creative and analytical domain work</li>
+  <li>high-context long-lived project memory</li>
+  <li>legacy local systems of record</li>
+  <li>file-heavy iteration</li>
+  <li>human taste and acceptance thresholds</li>
+  <li>need for recoverable handoffs</li>
+  <li>and now downstream website publication</li>
+</ul>
+
+<p>The architecture therefore cannot be reduced to one model prompt or one browser session. It is a multi-lane local system with persistent state outside the model.</p>
+
+<h2>3. High-Level Architecture</h2>
+<p>The current FRH system consists of:</p>
+<ul>
+  <li>one human operator who is the subject-matter expert and final authority</li>
+  <li>multiple specialized agent lanes</li>
+  <li>a durable local artifact tree</li>
+  <li>external validators and systems of record</li>
+  <li>backup, delta, and checkpoint infrastructure</li>
+  <li>a publishing lane for web-facing delivery</li>
+  <li>cross-model portability through exported local memory</li>
+</ul>
+
+<p>The simple conceptual loop is:</p>
+<p>human intent - specialized lane work - external validation - local persistence - recovery capture - publication staging</p>
+
+<h2>4. Demonstrated Output Classes</h2>
+<p>The architecture should now be evaluated partly by what it has already produced.</p>
+
+<p>The strongest demonstrated output classes so far are:</p>
+<ul>
+  <li><strong>character-engineering and publication bundles</strong>, where valid character artifacts, reader-facing HTML, images, and PDFs were coordinated locally and then promoted for web publication</li>
+  <li><strong>player-facing onboarding websites</strong>, where dense and irregular source material was transformed into coherent web-facing explanatory pages</li>
+</ul>
+
+<p>Two concrete proof cases are especially important:</p>
+<ul>
+  <li>the <strong>Sample Character Library</strong>, primarily coordinated through <code>CTC</code> and then handed to <code>Web_Reader</code> for polishing and GitHub Pages publication</li>
+  <li>the <strong>New Player Packet website</strong>, built from FRH onboarding material with <code>GMA</code>-adjacent interpretive help and <code>CTC</code> authoring, then finalized through <code>Web_Reader</code></li>
+</ul>
+
+<p>This matters technically because it shows the architecture can convert a highly irregular and concept-heavy local corpus into consistent public-facing deliverables without losing recoverability.</p>
+
+<h2>5. Core Lane Definitions</h2>
+
+<h3>5.1 <code>CTC</code></h3>
+<p><code>CTC</code> remains the primary build and integration lane. In the current phase, it is operating through a Codex-centered workspace at <code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH</code>.</p>
+<p>Responsibilities include:</p>
+<ul>
+  <li>artifact authoring and revision</li>
+  <li>integration of lessons from other lanes</li>
+  <li>project coordination and handoff writing</li>
+  <li>batch execution across files and work folders</li>
+  <li>checkpoint-aware operational work</li>
+</ul>
+
+<h3>5.2 <code>GMA</code></h3>
+<p><code>GMA</code> remains the higher-order interpretive and scenario-facing lane at <code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_GMA</code>.</p>
+<p>Responsibilities include:</p>
+<ul>
+  <li>play-facing review</li>
+  <li>campaign and scenario interpretation</li>
+  <li>party and setting analysis</li>
+  <li>reflective reading of finished artifacts</li>
+</ul>
+
+<h3>5.3 <code>Parser</code></h3>
+<p><code>Parser</code> remains the structural adapter lane at <code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_Parser_Lab</code>.</p>
+<p>Responsibilities include:</p>
+<ul>
+  <li>safe mutation of legacy file structures</li>
+  <li>round-trip parsing and serialization</li>
+  <li>rules-context-aware structural edits</li>
+  <li>refusal of unsafe or incoherent writes</li>
+</ul>
+
+<h3>5.4 <code>DR_Lab</code></h3>
+<p><code>DR_Lab</code> remains the continuity lane at <code>C:\Users\seang\OneDrive\Documents\ChatGPT_FRH_DR_Lab</code>.</p>
+<p>Responsibilities include:</p>
+<ul>
+  <li>backup and restore thinking</li>
+  <li>rollback planning</li>
+  <li>checkpoint and delta safety</li>
+  <li>workflow survivability analysis</li>
+</ul>
+
+<h3>5.5 <code>Web_Reader</code></h3>
+<p><code>Web_Reader</code> is now a first-class lane at <code>C:\Users\seang\OneDrive\Documents\ChatGPT_Web_Reader</code>.</p>
+<p>Responsibilities include:</p>
+<ul>
+  <li>promotion from work folders into publish-ready staging</li>
+  <li>website assembly and polishing</li>
+  <li>navigation and presentation refinement</li>
+  <li>downstream publication to public-facing sites</li>
+</ul>
+
+<p>This is one of the most important differences from the March architecture snapshot. The system now includes a defined presentation and publishing endpoint.</p>
+
+<h2>6. Artifact And Memory Model</h2>
+<p>The architecture still relies on local artifacts for operational memory. These include:</p>
+<ul>
+  <li>source notes</li>
+  <li>batch logs</li>
+  <li>handoff memos</li>
+  <li>source maps</li>
+  <li>prompt records</li>
+  <li>staging folders</li>
+  <li>HTML outputs</li>
+  <li>checkpoint manifests</li>
+  <li>session status notes</li>
+</ul>
+
+<p>The architecture's memory is intentionally externalized into files. This remains one of the main reasons the system is portable and recoverable.</p>
+
+<h2>7. Source Of Truth And Authority Model</h2>
+<p>The authority model remains strict:</p>
+<ul>
+  <li>the live local workspace trees are the actual working source of truth</li>
+  <li>legacy systems of record remain authoritative for the domains they own</li>
+  <li>published outputs are not assumed to outrank source work folders</li>
+  <li>mirrors and backup chains exist for recovery, not to create authority ambiguity</li>
+</ul>
+
+<p>The most important technical discipline is still: the model does not get to declare truth by confidence alone.</p>
+
+<h2>8. Validation Model</h2>
+<p>The AI lanes are not their own validators. External systems of record remain mandatory. In the FRH workflow, this includes legacy backend tools, local source artifacts, and other durable non-model authorities.</p>
+
+<p>This validation rule matters even more in a cross-model world. When the same workflow can move between Codex, Claude Code, Gemini, and local-model experiments, the validation authority must remain outside the model family entirely.</p>
+
+<h2>9. Publication Model</h2>
+<p><code>Web_Reader</code> created a distinct downstream pattern:</p>
+<p>work folder - verification - promotion - web staging - publication</p>
+
+<p>This means the architecture now separates:</p>
+<ul>
+  <li>authoring truth</li>
+  <li>review truth</li>
+  <li>structural mutation truth</li>
+  <li>recovery truth</li>
+  <li>presentation truth</li>
+</ul>
+
+<p>That separation helps prevent web polish from contaminating the authoring pipeline and helps preserve explainable handoffs.</p>
+
+<h2>10. Recovery And Continuity Model</h2>
+<p>The architecture remains strongly recovery-oriented. This includes:</p>
+<ul>
+  <li>checkpoint and delta capture</li>
+  <li>backup chains</li>
+  <li>promotion discipline</li>
+  <li>session-state notes</li>
+  <li>handoff documents</li>
+  <li>non-destructive iteration habits</li>
+</ul>
+
+<p>However, the recovery model is now broader than file backup alone. It explicitly includes preservation of the conversational and procedural memory that shaped the artifacts.</p>
+
+<h2>11. Transcript Export As DR Control</h2>
+<p>This is the most important new technical rule since the March memos.</p>
+
+<p>Full agent chat transcript export to local files is now part of the continuity model because:</p>
+<ul>
+  <li>hosted conversation history is not a reliable long-term asset</li>
+  <li>vendors may change pricing abruptly</li>
+  <li>vendors may close or restrict accounts without warning</li>
+  <li>future continuation may require another model or tool environment</li>
+</ul>
+
+<p>Therefore the architecture must preserve not only outputs, but also the operative reasoning trail, task history, and method evolution in locally owned artifacts.</p>
+
+<p>Stated bluntly: if the transcript is not locally exported, then the project's live procedural memory is still vendor-hosted and can be lost.</p>
+
+<h2>12. Portability Across Models And Tools</h2>
+<p>The architecture has now shown practical portability across:</p>
+<ul>
+  <li>Codex and the Codex desktop tool surface</li>
+  <li>Claude Code and its mirrored FRH workspace family</li>
+  <li>Gemini-assisted lanes</li>
+  <li>limited local-model experimentation, including <code>Gemma 4 E4B</code> with <code>8K</code> context on a <code>3080</code></li>
+</ul>
+
+<p>This implies that the durable part of the system is:</p>
+<ul>
+  <li>the workflow decomposition</li>
+  <li>the artifact tree</li>
+  <li>the validation model</li>
+  <li>the recovery model</li>
+</ul>
+
+<p>Model choice remains important, but it is now clearly subordinate to the architecture.</p>
+
+<h2>13. Human Skill Stack Requirements</h2>
+<p>The architecture still depends on a human operator with a broad combined skill stack:</p>
+<ul>
+  <li>subject-matter expertise</li>
+  <li>software engineering</li>
+  <li>artifact and workflow design</li>
+  <li>backup and disaster-recovery practice</li>
+  <li>ability to divide knowledge domains into specialized agent lanes</li>
+  <li>taste and acceptance judgment</li>
+</ul>
+
+<p>This requirement must remain explicit because the architecture can otherwise be misunderstood as a generic model trick. It is not. It is an expert-run system.</p>
+
+<h2>14. Current Strengths</h2>
+<p>The architecture is now strong at:</p>
+<ul>
+  <li>multi-lane local work</li>
+  <li>artifact-driven memory</li>
+  <li>publication staging</li>
+  <li>cross-model portability</li>
+  <li>checkpoint-aware operations</li>
+  <li>recoverable handoffs</li>
+  <li>preserving domain truth under tool changes</li>
+  <li>producing high-quality public deliverables from a difficult custom knowledge domain</li>
+</ul>
+
+<h2>15. Current Risks</h2>
+<p>The biggest risks are no longer just parser gaps or workflow roughness. They also include platform and vendor risk:</p>
+<ul>
+  <li>pricing instability</li>
+  <li>account closure or lockout</li>
+  <li>loss of hosted conversation memory</li>
+  <li>confusion between publication copies and work-folder truth</li>
+  <li>insufficient transcript export discipline</li>
+</ul>
+
+<h2>16. Why This Architecture Still Works</h2>
+<p>It works for the same reasons the March version worked:</p>
+<ul>
+  <li>the human expert remains central</li>
+  <li>specialized lanes reduce role confusion</li>
+  <li>local artifacts hold memory</li>
+  <li>external validators remain authoritative</li>
+  <li>recovery is built in rather than assumed later</li>
+</ul>
+
+<p>What changed is that publication and transcript preservation are now clearly part of that same design logic.</p>
+
+<h2>17. Transferability</h2>
+<p>This pattern remains portable to business environments built around legacy local systems. The stronger current claim is that portability is not only theoretical. The FRH project has already shown tool-surface migration and partial model migration while preserving the same architecture.</p>
+
+<p>A concrete business analogy remains useful: a small business still running on local <code>Peachtree Accounting</code>.</p>
+
+<p>In that mapping:</p>
+<ul>
+  <li><code>Parser</code> acts as the safe adapter around the local accounting truth, handling exports, structured reads, checked transformations, and boundaries on write-back behavior</li>
+  <li><code>CTC</code> acts as the execution lane for day-to-day office work around the system, such as invoice support, customer communication drafts, process notes, and operator assistance</li>
+  <li><code>GMA</code> acts as the analytical and review lane, reading outputs for trends, anomalies, and higher-order business interpretation</li>
+  <li><code>DR_Lab</code> acts as the backup, restore, rollback, and survivability lane</li>
+  <li><code>Web_Reader</code> acts as the downstream presentation lane for management reports, customer-ready summaries, or internal web-facing views built from validated local outputs</li>
+</ul>
+
+<p>That is why this architecture is portable: it does not depend on replacing the old system. It depends on preserving the old system as the record of truth while surrounding it with recoverable specialized lanes.</p>
+
+<h2>18. Current Operating Summary</h2>
+<p>The current FRH architecture is best understood as a local, role-specialized, artifact-driven, human-led operating system for expert work, with:</p>
+<ul>
+  <li><code>CTC</code>, <code>GMA</code>, <code>Parser</code>, <code>DR_Lab</code>, and <code>Web_Reader</code> as distinct lanes</li>
+  <li>external systems of record and validators</li>
+  <li>checkpoint and delta continuity</li>
+  <li>portable workflow design across multiple model vendors and tool surfaces</li>
+  <li>and mandatory export of agent chat transcripts to local files as part of disaster recovery</li>
+</ul>
+
+<p>The system should no longer be described merely as AI assistance. It is now a recoverable multi-agent local architecture that can produce publishable public artifacts from a difficult custom domain while keeping its memory and methods under local human control even if vendors change.</p>
+    </article>
+
+    <div class="page-footer">
+      <div class="chapter-nav">
+        <a href="../memo_family.html">Memo Family</a>
+        <a class="primary" href="../index.html">Reader Home</a>
+        <a class="primary" href="#top">Return to Top</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
