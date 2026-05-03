@@ -41,6 +41,21 @@ p, li { font-size: 1rem; }
   font-size: 0.8rem;
   margin-bottom: 0.45rem;
 }
+
+.provenance-bar {
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.75rem 0.55rem;
+  border-bottom: 1px solid rgba(125, 88, 34, 0.2);
+  color: #6f6254;
+  font-size: 0.75rem;
+  letter-spacing: 0.035em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.provenance-bar p {
+  margin: 0;
+}
 .deck {
   color: var(--muted);
   font-size: 1.08rem;
@@ -1032,6 +1047,12 @@ hr { border: none; border-top: 1px solid var(--line); margin: 1rem 0; }
 @media (max-width: 700px) {
   body {
     font-size: 17px;
+  }
+  .provenance-bar {
+    font-size: 0.7rem;
+    letter-spacing: 0.025em;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
   }
   main {
     padding: 20px 16px 34px;
